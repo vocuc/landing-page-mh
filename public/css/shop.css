@@ -1,0 +1,127 @@
+.main {
+  max-width: 100%;
+  min-width: 1440px;
+  padding: 0px;
+  background: radial-gradient(ellipse 50% 4% at top, rgba(182, 129, 255, 0.2509803922), transparent), radial-gradient(ellipse 60% 4% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
+  height: 1000px;
+  position: relative;
+}
+
+.main .bg-icon-1 {
+  position: absolute;
+  top: 597px;
+  right: 0px;
+  height: 199px;
+}
+
+.main .products {
+  margin-top: 16px !important;
+}
+
+.main .products .list-product-header {
+  display: inline-flex;
+  padding: 8px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.main .products .list-product-header .back-link {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: var(--Neutral-Grey-600, #767676);
+  font-family: "SF Pro Display";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  /* 150% */
+}
+
+.main .products .list-product-header h1 {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  /* 125% */
+}
+
+.main .products .content {
+  margin-top: 35px;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 20px;
+}
+
+.main .products .content .product-item {
+  width: 164px;
+  padding: 16px;
+  box-sizing: content-box;
+  border-radius: 12px;
+  border: 1.6px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main .products .content .product-item .product-item__img {
+  width: 100%;
+  border-radius: 5.096px;
+  border: 1px solid #6E46DF;
+  background: lightgray 50%/cover no-repeat;
+  overflow: hidden;
+}
+
+.main .products .content .product-item .product-item__img img {
+  width: 100%;
+}
+
+.main .products .content .product-item .product-item__title {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.main .products .content .product-item .group-price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.main .products .content .product-item .group-price .price-original {
+  color: var(--Neutral-Grey-400, #A5A5A5);
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.608px;
+  /* 97.551% */
+  text-decoration-line: strikethrough;
+}
+
+.main .products .content .product-item .group-price .divier {
+  width: 1px;
+  height: 8px;
+  border-radius: 7px;
+  background: #D9D9D9;
+}
+
+.main .products .content .product-item .group-price .price-discount {
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 15.608px;
+  /* 97.551% */
+  background: var(--Linear, linear-gradient(180deg, #FEF1FD 0%, #FA97FF 38%, #6F48FD 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

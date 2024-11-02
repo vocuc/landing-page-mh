@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.main {
+  max-width: 100%;
+  min-width: 1440px;
+  padding: 0px;
+  background: radial-gradient(ellipse 50% 4% at top, rgba(182, 129, 255, 0.2509803922), transparent), radial-gradient(ellipse 60% 4% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
+  position: relative;
+}
+.main .banner-group .banner-group__item {
+  display: flex;
+  padding: 80px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .banner-group .banner-group__item .banner__right .banner__title--type_1 {
+  font-family: "SF Pro Display";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background: linear-gradient(90deg, #FFF 0%, #B0B0B0 106.62%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main .banner-group .banner-group__item .banner__right .banner__title--type_1 .banner__title--AI {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 71.649px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: normal;
+  background: var(--Linear, linear-gradient(180deg, #FEF1FD 0%, #FA97FF 38%, #6F48FD 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main .banner-group .banner-group__item .banner__right .banner__sub-title {
+  color: #969696;
+  font-family: "SF Pro Display";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 577px;
+  margin-top: 32px;
+}
+.main .banner-group .banner-group__item .banner__right .group-btn-action {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 56px;
+}
+.main .banner-group .banner-group__item .banner__left .banner__image {
+  position: relative;
+}
+.main .banner-group .banner-group__item .banner__left .banner__image .banner_bg {
+  background: #241B3D;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(19.0438117981px);
+}
+.main .banner-group .banner-group__item .banner__left .banner__image img {
+  position: relative;
+  width: 259px;
+  margin: 38px 44px;
+}
+.main .bg-icon-1 {
+  height: 199px;
+  position: absolute;
+  right: 0px;
+  top: 479px;
+  transform: translateY(50%);
+  z-index: 2;
+}
+.main .content {
+  position: relative;
+}
+.main .content .title {
+  background: radial-gradient(ellipse 50% 100% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
+}
+.main .content .title .title__group--sologan {
+  /* 140% */
+}
+.main .content .title .title__group--sologan .title__group--sologan-content {
+  color: #FFF;
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  margin-bottom: 29px;
+}
+.main .content .title .title__group--sologan .line-title {
+  background: linear-gradient(to bottom, #1a1a2e, #0f0f1e);
+  /* Nền tối loang từ trên xuống */
+  height: 100px;
+  /* Chiều cao của thanh */
+  position: relative;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #B681FF 0%, #8547DC 52%, #B681FF 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(163, 69, 247, 0.28);
+}
+.main .content .content__detail {
+  margin-top: 107px !important;
+  margin-bottom: 90px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.main .content .content__detail .img-1 {
+  padding: 0px 67.5px;
+}
+.main .content .content__detail .img-1 img {
+  width: 100%;
+}
+.main .content .content__detail .text {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.main .content .content__detail .text .sub-text {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.main .content .content__detail .img-2 img {
+  width: 100%;
+}
+.main .content .bg-icon-1 {
+  height: 200px;
+  position: absolute;
+  top: 459px;
+  transform: translateY(70%);
+  left: 0px;
+}
+.main .contact {
+  padding: 80px 0px;
+}
+.main .contact .title {
+  background: radial-gradient(ellipse 50% 100% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
+  margin-top: 172px;
+}
+.main .contact .title .title__group--sologan {
+  /* 140% */
+}
+.main .contact .title .title__group--sologan .title__group--sologan-content {
+  color: #FFF;
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+}
+.main .contact .title .title__group--sologan .title__group--sologan-sub-content {
+  color: #969696;
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+.main .contact .title .title__group--sologan .line-title {
+  background: linear-gradient(to bottom, #1a1a2e, #0f0f1e);
+  /* Nền tối loang từ trên xuống */
+  height: 100px;
+  /* Chiều cao của thanh */
+  position: relative;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #B681FF 0%, #8547DC 52%, #B681FF 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(163, 69, 247, 0.28);
+}
+.main .contact .contact-form {
+  margin-top: 50px;
+}
+.main .contact .contact-form .form {
+  width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main .contact .contact-form .form .btn-type-3 {
+  width: 100%;
+}

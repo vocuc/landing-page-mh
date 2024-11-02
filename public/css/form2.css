@@ -1,0 +1,138 @@
+#modalContactPay2 .modal-dialog {
+  max-width: 748px;
+}
+#modalContactPay2 .modal-dialog .modal-content {
+  border-radius: 12px;
+  background: #050505;
+}
+#modalContactPay2 .modal-dialog .modal-content .modal-body {
+  padding: 32px;
+}
+#modalContactPay2 .modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  position: relative;
+}
+#modalContactPay2 .modal-form .close-modal {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  cursor: pointer;
+}
+#modalContactPay2 .modal-form .form-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+#modalContactPay2 .modal-form .form-header .title {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  /* 141.667% */
+}
+#modalContactPay2 .modal-form .form-header .sub-title {
+  color: var(--Neutre-600, #6B767F);
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+  letter-spacing: -0.176px;
+}
+#modalContactPay2 .modal-form .group-btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 17px;
+}
+#modalContactPay2 .modal-form .payment-info {
+  display: flex;
+  gap: 22px;
+}
+#modalContactPay2 .modal-form .payment-info .qr {
+  height: 224px;
+  width: 224px;
+  border-radius: 13px;
+  background: var(--Neutre-100, #F7F9FD);
+  overflow: hidden;
+}
+#modalContactPay2 .modal-form .payment-info .qr img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#modalContactPay2 .modal-form .payment-info .info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#modalContactPay2 .modal-form .payment-info .info .payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#modalContactPay2 .modal-form .payment-info .info .payment-list .payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+#modalContactPay2 .modal-form .payment-info .info .payment-list .payment-item .title {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+  letter-spacing: -0.176px;
+}
+#modalContactPay2 .modal-form .payment-info .info .payment-list .payment-item .value {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  /* 150% */
+  letter-spacing: -0.176px;
+}
+#modalContactPay2 .modal-form .payment-info .info .info-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#modalContactPay2 .modal-form .payment-info .info .info-total .title {
+  color: #FFF;
+  /* Body/Regular/L */
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+  letter-spacing: -0.176px;
+}
+#modalContactPay2 .modal-form .payment-info .info .info-total .value {
+  font-family: "SF Pro Display";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 24px;
+  /* 100% */
+  letter-spacing: -0.264px;
+  background: var(--Linear, linear-gradient(180deg, #FEF1FD 0%, #FA97FF 38%, #6F48FD 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}/*# sourceMappingURL=form2.css.map */

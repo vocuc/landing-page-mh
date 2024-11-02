@@ -1,0 +1,18 @@
+.footer {
+  margin-top: 202px;
+}
+.footer .footer-copyright {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.footer .footer-copyright .footer-copyright__left {
+  display: flex;
+  gap: 34px;
+}/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,191 @@
+@font-face {
+  font-family: SF Pro Display;
+  font-weight: 300;
+  src: url(/fonts/sf-pro-display_light.woff2);
+}
+
+@font-face {
+  font-family: SF Pro Display;
+  font-weight: 400;
+  src: url(/fonts/sf-pro-display_regular.woff2);
+}
+
+@font-face {
+  font-family: SF Pro Display;
+  font-weight: 500;
+  src: url(/fonts/sf-pro-display_medium.woff2);
+}
+
+@font-face {
+  font-family: SF Pro Display;
+  font-weight: 600;
+  src: url(/fonts/sf-pro-display_semibold.woff2);
+}
+
+@font-face {
+  font-family: SF Pro Display;
+  font-weight: 700;
+  src: url(/fonts/sf-pro-display_bold.woff2);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  src: url(/fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  src: url(/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 500;
+  src: url(/fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 600;
+  src: url(/fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  src: url(/fonts/Montserrat-Bold.ttf);
+}
+
+* {
+  all: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg--0D0C14 {
+  background: #0D0C14;
+}
+
+.w-1220 {
+  width: 1200px;
+}
+
+.w-834 {
+  width: 834px;
+}
+
+.w-963 {
+  width: 963px;
+}
+
+.btn-custom {
+  cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 18px;
+  height: 56px;
+}
+
+.btn-type-1 {
+  display: flex;
+  padding: 8px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  background: #3B0980;
+  color: #F3F0F6 !important;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.btn-type-1 .btn-type-1__icon {
+  width: 40px;
+  padding: 8px;
+  border-radius: 63px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-type-2 {
+  display: flex;
+  padding: 8px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #F3F0F6;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.btn-type-3 {
+  display: flex;
+  padding: 16px var(--inset-xl, 20px);
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  color: var(--Neutre-50, #FFF);
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 122%;
+  border: none;
+  background: #534F5A;
+}
+
+.gap-12px {
+  gap: 12px;
+}
+
+.input-custom {
+  padding: 16px;
+  border-radius: 12px;
+  background: #29252D;
+  color: #B3B1B3;
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border: none;
+  /* 150% */
+}
+
+.input-custom:focus {
+  outline: none;
+}
+
+.loading-wrapper-bg {
+  position: absolute;
+  display: none;
+  z-index: 99999999;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.loading-wrapper-bg__fixed{
+  position: fixed;
+}
+
+.loading-wrapper-bg.show {
+  display: flex;
+}
+
+.form-input-error{
+  color: #D7002B;
+}
