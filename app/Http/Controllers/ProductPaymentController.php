@@ -49,7 +49,7 @@ class ProductPaymentController extends Controller
 
         $productPayment = ProductPayment::find($data['id']);
 
-        $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'email_product_otp');
+        $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'sms_product_otp');
 
         $otpSender->to($productPayment->email, $productPayment->id);
 

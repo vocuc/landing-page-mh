@@ -40,7 +40,7 @@ class ProductPaymentService
             $status = $status->value;
         }
         if ($statusOriginal != $status && $status == Status::SUCCESS->value) {
-            $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'email_product_otp');
+            $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'sms_product_otp');
 
             $otpSender->to($productPayment->email, $productPayment->id);
 

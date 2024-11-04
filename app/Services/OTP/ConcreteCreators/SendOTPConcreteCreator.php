@@ -5,6 +5,7 @@ namespace App\Services\OTP\ConcreteCreators;
 use App\Services\OTP\ConcreteProducts\EmailOTPSender;
 use App\Services\OTP\ConcreteProducts\EmailPaymentProductOTPSender;
 use App\Services\OTP\ConcreteProducts\SmsOTPSender;
+use App\Services\OTP\ConcreteProducts\SmsPaymentProductOTPSender;
 use App\Services\OTP\Creator\SendOTPCreator;
 use App\Services\OTP\Products\OTPSender;
 
@@ -23,10 +24,10 @@ class SendOTPConcreteCreator implements SendOTPCreator
             return new EmailOTPSender($serviceRegister);
         }
 
-        if ($type == 'email_product_otp') {
-            return new EmailPaymentProductOTPSender($serviceRegister);
+        if ($type == 'sms_product_otp') {
+            return new SmsPaymentProductOTPSender($serviceRegister);
         }
-        
+
         if ($type == 'sms') {
             return new SmsOTPSender($serviceRegister);
         }
