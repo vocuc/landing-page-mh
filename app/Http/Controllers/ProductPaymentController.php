@@ -45,22 +45,22 @@ class ProductPaymentController extends Controller
 
     public function download(ProductPaymentDownloadRequest $request)
     {
-        $data = $request->validated();
+        // $data = $request->validated();
 
-        $productPayment = ProductPayment::find($data['id']);
+        // $productPayment = ProductPayment::find($data['id']);
 
-        $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'sms_product_otp');
+        // $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'sms_product_otp');
 
-        $otpSender->to($productPayment->email, $productPayment->id);
+        // $otpSender->to($productPayment->email, $productPayment->id);
 
-        $result = $otpSender->verify($request->post('code'));
+        // $result = $otpSender->verify($request->post('code'));
 
-        if ($result['status'] == false) {
-            return response()->json(json_encode([
-                'status' => false,
-                'message' => $result['message']
-            ]));
-        }
+        // if ($result['status'] == false) {
+        //     return response()->json(json_encode([
+        //         'status' => false,
+        //         'message' => $result['message']
+        //     ]));
+        // }
 
         $filePath = public_path('images/bg-icon-1.png');
 
