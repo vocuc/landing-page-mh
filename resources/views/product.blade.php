@@ -2,6 +2,7 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
 @endpush
+@section('title', 'Danh sách sản phẩm')
 @section('content')
     <section class="products mw-1220 m-auto">
         <div class="list-product-header ">

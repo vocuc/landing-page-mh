@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/form2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form3.css') }}">
 @endpush
+@section('title', 'Chi tiết sản phẩm')
 @section('content')
     <section class="product mw-1220 m-auto">
         <div class="detail-header ">

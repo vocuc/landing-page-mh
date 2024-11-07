@@ -3,6 +3,7 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 @endpush
+@section('title', 'Trang Chủ')
 @section('content')
     <section class="banner-group mw-1220 m-auto">
         <div class="banner-group__item">
