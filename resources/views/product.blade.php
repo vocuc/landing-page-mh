@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
 @endpush
 @section('content')
-    <section class="products w-1220 m-auto">
+    <section class="products mw-1220 m-auto">
         <div class="list-product-header ">
             <a href="{{ route('home') }}" class="back-link">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

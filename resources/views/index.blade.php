@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 @endpush
 @section('content')
-    <section class="banner-group w-1220 m-auto">
+    <section class="banner-group mw-1220 m-auto">
         <div class="banner-group__item">
             <div class="banner__right">
                 <div class="banner__title banner__title--type_1">
@@ -53,8 +53,8 @@
 
     <section class="content">
         <div class="title">
-            <div class="title__group--sologan w-1220 m-auto">
-                <h2 class="title__group--sologan-content">4 BƯỚC "BẤT BẠI" GIÚP TÔI KIẾM THU NHẬP 9 <br> - 10 CHỮ
+            <div class="title__group--sologan mw-1220 m-auto">
+                <h2 class="title__group--sologan-content">4 BƯỚC "BẤT BẠI" GIÚP TÔI KIẾM THU NHẬP 9 - 10 CHỮ
                     SỐ ONLINE VỚI AI
                 </h2>
                 <div class="line-title"></div>
@@ -89,7 +89,7 @@
     </section>
     <section class="contact">
         <div class="title">
-            <div class="title__group--sologan w-1220 m-auto">
+            <div class="title__group--sologan mw-1220 m-auto">
                 <h2 class="title__group--sologan-content">
                     Miễn phí tài liệu về AI
                 </h2>
@@ -103,10 +103,10 @@
             <form action="{{ route('contact-form.store') }}" class="form m-auto" id="contactForm">
                 @csrf
                 <div class="d-flex gap-12px ">
-                    <div class="flex-grow-1 d-flex flex-column">
+                    <div class="flex-grow-1 d-flex flex-column f-w-12px">
                         <input type="text" class=" input-custom" name="name" placeholder="Tên của bạn">
                     </div>
-                    <div class="flex-grow-1 d-flex flex-column">
+                    <div class="flex-grow-1 d-flex flex-column f-w-12px">
                         <input type="text" class=" input-custom" name="email" placeholder="Địa chỉ email của bạn">
 
                     </div>

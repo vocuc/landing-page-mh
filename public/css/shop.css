@@ -125,3 +125,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@media only screen and (max-width: 1139px) {
+
+  .main {
+    padding: 0px 10px;
+  }
+
+  .main .contact .contact-form .form {
+    width: 100%;
+  }
+
+  .footer-copyright__left .terms{
+    display: none;
+  }
+}

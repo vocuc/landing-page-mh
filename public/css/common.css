@@ -74,6 +74,11 @@ a {
   width: 1200px;
 }
 
+.mw-1220 {
+  max-width: 1200px;
+
+}
+
 .w-834 {
   width: 834px;
 }
@@ -178,7 +183,7 @@ a {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.loading-wrapper-bg__fixed{
+.loading-wrapper-bg__fixed {
   position: fixed;
 }
 
@@ -186,6 +191,15 @@ a {
   display: flex;
 }
 
-.form-input-error{
+.form-input-error {
   color: #D7002B;
+}
+.mw-50p{
+  max-width: 50%;
+}
+
+@media only screen and (max-width: 1139px) {
+  .btn-custom {
+    font-size: 11.429px;
+  }
 }

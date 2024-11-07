@@ -6,6 +6,8 @@ use App\Models\ProductPayment;
 use Illuminate\Support\Facades\Cache;
 use App\Enums\ProductPayments\Status;
 use App\Services\OTP\ConcreteCreators\SendOTPConcreteCreator;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
 
 class ProductPaymentService
 {
@@ -40,11 +42,18 @@ class ProductPaymentService
             $status = $status->value;
         }
         if ($statusOriginal != $status && $status == Status::SUCCESS->value) {
-            $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'sms_product_otp');
-
-            $otpSender->to($productPayment->email, $productPayment->id);
-
-            $otpSender->sent();
+            Mail::raw('OTP' . $productPayment->download_code, function ($message) use (&$productPayment) {
+                $message->to($productPayment->email);
+            });
         }
+    }
+
+    public function makeDownloadCode(ProductPayment $productPayment)
+    {
+        $productPayment->fill([
+            'download_code' => $productPayment->id .  random_int(1000, 9999)
+        ]);
+
+        $productPayment->save();
     }
 }

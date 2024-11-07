@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/form3.css') }}">
 @endpush
 @section('content')
-    <section class="product w-1220 m-auto">
+    <section class="product mw-1220 m-auto">
         <div class="detail-header ">
             <a href="{{ route('products') }}" class="back-link">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

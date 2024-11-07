@@ -1,6 +1,7 @@
 .footer {
   margin-top: 202px;
 }
+
 .footer .footer-copyright {
   color: #FFF;
   font-family: "SF Pro Display";
@@ -12,7 +13,15 @@
   justify-content: space-between;
   padding: 20px 0px;
 }
+
 .footer .footer-copyright .footer-copyright__left {
   display: flex;
   gap: 34px;
-}/*# sourceMappingURL=footer.css.map */
+}
+
+
+@media only screen and (max-width: 1139px) {
+  .footer {
+    margin-top: 90px;
+  }
+}

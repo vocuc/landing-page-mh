@@ -7,21 +7,15 @@ use App\Enums\ProductPayments\Status;
 use App\Http\Requests\ProductPaymentCreateRequest;
 use App\Http\Requests\ProductPaymentDownloadRequest;
 use App\Models\ProductPayment;
-use App\Services\OTP\ConcreteCreators\SendOTPConcreteCreator;
 use App\Services\Payment\PaymentService;
-use App\Services\ProductPayment\ProductPaymentService;
 
 class ProductPaymentController extends Controller
 {
     private $paymentService;
 
-    private $productPaymentService;
-
-    public function __construct(PaymentService $paymentService, ProductPaymentService $productPaymentService)
+    public function __construct(PaymentService $paymentService)
     {
         $this->paymentService = $paymentService;
-
-        $this->productPaymentService = $productPaymentService;
     }
 
     public function store(ProductPaymentCreateRequest $request)
@@ -45,22 +39,13 @@ class ProductPaymentController extends Controller
 
     public function download(ProductPaymentDownloadRequest $request)
     {
-        // $data = $request->validated();
+        $data = $request->validated();
 
-        // $productPayment = ProductPayment::find($data['id']);
+        $productPayment = ProductPayment::where('status', Status::SUCCESS)->where('download_code', $data['code'])->first();
 
-        // $otpSender = SendOTPConcreteCreator::createOTPSender("product_payment", 'sms_product_otp');
-
-        // $otpSender->to($productPayment->email, $productPayment->id);
-
-        // $result = $otpSender->verify($request->post('code'));
-
-        // if ($result['status'] == false) {
-        //     return response()->json(json_encode([
-        //         'status' => false,
-        //         'message' => $result['message']
-        //     ]));
-        // }
+        if ($productPayment === null) {
+            abort(404);
+        }
 
         $filePath = public_path('images/bg-icon-1.png');
 

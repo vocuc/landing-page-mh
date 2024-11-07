@@ -1,17 +1,20 @@
 @charset "UTF-8";
+
 .main {
   max-width: 100%;
-  min-width: 1440px;
   padding: 0px;
   background: radial-gradient(ellipse 50% 4% at top, rgba(182, 129, 255, 0.2509803922), transparent), radial-gradient(ellipse 60% 4% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
   position: relative;
+  padding: 0px 120px;
 }
+
 .main .banner-group .banner-group__item {
   display: flex;
   padding: 80px 0px;
   justify-content: space-between;
   align-items: center;
 }
+
 .main .banner-group .banner-group__item .banner__right .banner__title--type_1 {
   font-family: "SF Pro Display";
   font-size: 48px;
@@ -23,6 +26,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .main .banner-group .banner-group__item .banner__right .banner__title--type_1 .banner__title--AI {
   text-align: center;
   font-family: Montserrat;
@@ -35,6 +39,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .main .banner-group .banner-group__item .banner__right .banner__sub-title {
   color: #969696;
   font-family: "SF Pro Display";
@@ -45,15 +50,18 @@
   max-width: 577px;
   margin-top: 32px;
 }
+
 .main .banner-group .banner-group__item .banner__right .group-btn-action {
   display: flex;
   align-items: center;
   gap: 17px;
   margin-top: 56px;
 }
+
 .main .banner-group .banner-group__item .banner__left .banner__image {
   position: relative;
 }
+
 .main .banner-group .banner-group__item .banner__left .banner__image .banner_bg {
   background: #241B3D;
   position: absolute;
@@ -61,11 +69,13 @@
   height: 100%;
   filter: blur(19.0438117981px);
 }
+
 .main .banner-group .banner-group__item .banner__left .banner__image img {
   position: relative;
   width: 259px;
   margin: 38px 44px;
 }
+
 .main .bg-icon-1 {
   height: 199px;
   position: absolute;
@@ -74,15 +84,21 @@
   transform: translateY(50%);
   z-index: 2;
 }
+
 .main .content {
   position: relative;
 }
+
 .main .content .title {
   background: radial-gradient(ellipse 50% 100% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
 }
+
 .main .content .title .title__group--sologan {
   /* 140% */
+  max-width: 879px;
+
 }
+
 .main .content .title .title__group--sologan .title__group--sologan-content {
   color: #FFF;
   text-align: center;
@@ -93,6 +109,7 @@
   line-height: 56px;
   margin-bottom: 29px;
 }
+
 .main .content .title .title__group--sologan .line-title {
   background: linear-gradient(to bottom, #1a1a2e, #0f0f1e);
   /* Nền tối loang từ trên xuống */
@@ -109,6 +126,7 @@
   border-radius: 50%;
   box-shadow: 0 0 20px 10px rgba(163, 69, 247, 0.28);
 }
+
 .main .content .content__detail {
   margin-top: 107px !important;
   margin-bottom: 90px !important;
@@ -116,12 +134,15 @@
   flex-direction: column;
   gap: 32px;
 }
+
 .main .content .content__detail .img-1 {
   padding: 0px 67.5px;
 }
+
 .main .content .content__detail .img-1 img {
   width: 100%;
 }
+
 .main .content .content__detail .text {
   color: #FFF;
   font-family: "SF Pro Display";
@@ -130,6 +151,7 @@
   font-weight: 400;
   line-height: normal;
 }
+
 .main .content .content__detail .text .sub-text {
   color: #FFF;
   font-family: "SF Pro Display";
@@ -138,9 +160,11 @@
   font-weight: 700;
   line-height: normal;
 }
+
 .main .content .content__detail .img-2 img {
   width: 100%;
 }
+
 .main .content .bg-icon-1 {
   height: 200px;
   position: absolute;
@@ -148,16 +172,20 @@
   transform: translateY(70%);
   left: 0px;
 }
+
 .main .contact {
   padding: 80px 0px;
 }
+
 .main .contact .title {
   background: radial-gradient(ellipse 50% 100% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
   margin-top: 172px;
 }
+
 .main .contact .title .title__group--sologan {
   /* 140% */
 }
+
 .main .contact .title .title__group--sologan .title__group--sologan-content {
   color: #FFF;
   text-align: center;
@@ -166,7 +194,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: 56px;
+
 }
+
 .main .contact .title .title__group--sologan .title__group--sologan-sub-content {
   color: #969696;
   text-align: center;
@@ -177,6 +207,7 @@
   line-height: normal;
   margin-bottom: 30px;
 }
+
 .main .contact .title .title__group--sologan .line-title {
   background: linear-gradient(to bottom, #1a1a2e, #0f0f1e);
   /* Nền tối loang từ trên xuống */
@@ -193,9 +224,11 @@
   border-radius: 50%;
   box-shadow: 0 0 20px 10px rgba(163, 69, 247, 0.28);
 }
+
 .main .contact .contact-form {
   margin-top: 50px;
 }
+
 .main .contact .contact-form .form {
   width: 760px;
   display: flex;
@@ -205,4 +238,120 @@
 
 .main .contact .contact-form .form .btn-type-3 {
   width: 100%;
+}
+
+.f-w-12px {
+  width: calc(50% - 12px);
+}
+
+@media only screen and (max-width: 1139px) {
+
+  .main {
+    padding: 0px 10px;
+  }
+
+  .main .content .bg-icon-1 {
+    display: none;
+  }
+
+  .main .banner-group .banner-group__item {
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 0px;
+  }
+
+  .main .banner-group .banner-group__item .banner__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main .banner-group .banner-group__item .banner__right .banner__title--type_1 {
+    font-family: "SF Pro Display";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.19px;
+    text-align: center;
+  }
+
+  .main .banner-group .banner-group__item .banner__right .banner__title--type_1 .banner__title--AI {
+    display: inline-block;
+    width: 64px;
+  }
+
+  .main .banner-group .banner-group__item .banner__right .banner__title--type_1 svg {
+    width: 100%;
+  }
+
+  .main .banner-group .banner-group__item .banner__right .banner__sub-title {
+    font-family: "SF Pro Display";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: center;
+
+  }
+
+  .main .content .title .title__group--sologan .title__group--sologan-content {
+    font-family: "SF Pro Display";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+
+  }
+
+  .main .content .title .title__group--sologan .line-title {
+    width: 100%;
+
+  }
+
+
+  .main .contact .title .title__group--sologan .line-title {
+    width: 100%;
+
+  }
+
+  .main .content .content__detail {
+    max-width: 100%;
+    margin-top: 42px !important;
+  }
+
+  .main .content .content__detail .img-1 {
+    padding: 0px;
+  }
+
+  .main .contact .title {
+    margin-top: 0px;
+  }
+
+  .main .contact .title .title__group--sologan .title__group--sologan-content {
+    color: #FFF;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    /* 133.333% */
+
+  }
+
+  .main .contact .title .title__group--sologan .title__group--sologan-sub-content {
+    color: #969696;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .main .contact .contact-form .form {
+    width: 100%;
+  }
+
+  .footer-copyright__left .terms{
+    display: none;
+  }
 }

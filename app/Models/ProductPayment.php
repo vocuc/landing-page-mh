@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductPayment extends Model
 {
     const PRICE = 100000;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -17,6 +17,7 @@ class ProductPayment extends Model
         'user_name',
         'email',
         'phone',
-        'status'
+        'status',
+        'download_code'
     ];
 }
