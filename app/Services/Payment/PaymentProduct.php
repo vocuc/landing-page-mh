@@ -10,7 +10,7 @@ use App\Repositories\WalletTransaction\Enums\WalletTransactionStatus;
 
 class PaymentProduct extends PaymentStrategy
 {
-    protected $prefix = 'PRODUCT';
+    protected $prefix = 'PAYMENT';
 
     public function genarateCode($id)
     {

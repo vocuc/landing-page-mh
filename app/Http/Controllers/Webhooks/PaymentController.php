@@ -32,14 +32,14 @@ class PaymentController extends Controller
 
         $paymentData = $request->get("payment", []);
 
-        if (empty($paymentData['content']) || !Str::contains($paymentData['content'] ?? "", "GMV")) {
+        if (empty($paymentData['content']) || !Str::contains($paymentData['content'] ?? "", "THIENNHAI")) {
             return response()->json([
                 'status'    =>  'failed',
                 'message'   => 'Giao dịch không hợp lệ',
             ], 400);
         }
 
-        preg_match('/\b\w*PRODUCT\w*\b/', $paymentData['content'], $paymentCode);
+        preg_match('/\b\w*PAYMENT\w*\b/', $paymentData['content'], $paymentCode);
         
         if (!isset($paymentCode)) {
             return response()->json([

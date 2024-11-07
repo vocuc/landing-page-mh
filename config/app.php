@@ -69,8 +69,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-
+    'timezone' => 'Asia/Ho_Chi_Minh', // Múi giờ Việt Nam
+    
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration

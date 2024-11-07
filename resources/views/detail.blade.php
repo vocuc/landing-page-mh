@@ -205,7 +205,7 @@
                         </div>
                         <div class="form-header">
                             <div class="title">Mã code của bạn</div>
-                            <div class="sub-title">Mã code được gửi tới số điện thoại 0852021***</div>
+                            <div class="sub-title">Mã code được gửi tới email <span id="email-send-code"></span></div>
                         </div>
                         <div>
                             <input type="text" class="col-12 input-custom" name="code"

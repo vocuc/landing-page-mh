@@ -47,10 +47,12 @@ $(document).ready(function () {
                     $('.loading-wrapper-bg').removeClass('show'); // Hiển thị loading nếu cần
 
                     $('#modalContactPay1').modal('hide');
-
+                    console.log(data.email	);
                     setQrPay2(data.link_qr_code)
-
+                    
                     setIDCode(data.id)
+
+                    setEmailStep3(data.email)
 
                     $("#formPay1")[0].reset();
 
@@ -109,6 +111,20 @@ $(document).ready(function () {
         $('#code-id').val(id);
     }
 
+    function maskEmail(email) {
+        const atIndex = email.indexOf('@');
+        
+        if (atIndex >= 3) {
+            return '***' + email.slice(3);
+        }
+        
+        return '*'.repeat(atIndex) + email.slice(atIndex);
+    }
+
+    function setEmailStep3(email) {
+        $('#modalContactPay3 #email-send-code').text(maskEmail(email));
+    }
+    
     const optionConfigValidate2 = {
         debug: false,
         rules: {

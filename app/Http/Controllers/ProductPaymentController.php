@@ -33,6 +33,8 @@ class ProductPaymentController extends Controller
         );
 
         $genaratePayment['id'] = $productPayment->id;
+        
+        $genaratePayment['email'] = $productPayment->email;
 
         return response()->json($genaratePayment);
     }
