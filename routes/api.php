@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'webhook',], function () {
-    Route::post('pay-gmv/' . config('payment.app_payment_key'), PaymentController::class);
+    Route::post('pay/' . config('payment.app_payment_key'), PaymentController::class);
 });
 
 Route::group(['prefix' => 'product-payment'], function () {
