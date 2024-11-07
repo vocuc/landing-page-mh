@@ -42,7 +42,7 @@ class ProductPaymentService
             $status = $status->value;
         }
         if ($statusOriginal != $status && $status == Status::SUCCESS->value) {
-            Mail::raw('OTP' . $productPayment->download_code, function ($message) use (&$productPayment) {
+            Mail::raw('OTP : ' . $productPayment->download_code, function ($message) use (&$productPayment) {
                 $message->to($productPayment->email);
             });
         }

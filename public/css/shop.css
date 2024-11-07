@@ -1,10 +1,10 @@
 .main {
   max-width: 100%;
-  min-width: 1440px;
   padding: 0px;
   background: radial-gradient(ellipse 50% 4% at top, rgba(182, 129, 255, 0.2509803922), transparent), radial-gradient(ellipse 60% 4% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
-  height: 1000px;
   position: relative;
+  padding: 0px 120px;
+
 }
 
 .main .bg-icon-1 {
@@ -55,6 +55,7 @@
   display: flex;
   gap: 24px;
   padding-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .main .products .content .product-item {
@@ -130,10 +131,6 @@
 
   .main {
     padding: 0px 10px;
-  }
-
-  .main .contact .contact-form .form {
-    width: 100%;
   }
 
   .footer-copyright__left .terms{
