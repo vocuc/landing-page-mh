@@ -10,8 +10,8 @@ class ContactFormObserver
 {
     public function created(ContactForm $contactForm): void
     {
-        Mail::raw($contactForm->name . '-' . $contactForm->email . '-' . $contactForm->note, function ($message) {
-            $message->to(config('constants.MAIL_CONTACT'));
-        });
+        // Mail::raw($contactForm->name . '-' . $contactForm->email . '-' . $contactForm->note, function ($message) {
+        //     $message->to(config('constants.MAIL_CONTACT'));
+        // });
     }
 }
