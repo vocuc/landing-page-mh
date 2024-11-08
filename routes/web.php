@@ -24,3 +24,10 @@ Route::get('/products', function () {
 Route::get('/products/detail', function () {
     return view('detail');
 })->name('detail');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::resource('products', App\Http\Controllers\ProductController::class);
+Route::resource('vouchers', App\Http\Controllers\VoucherController::class);
