@@ -30,7 +30,7 @@ class SendOTP extends Mailable implements ShouldQueue
         $content .= "Xin vui lòng không chia sẻ mã này với bất kỳ ai.";
 
         return $this->subject($this->subjectTitle)
-            ->from(env('MAIL_FROM_ADDRESS', 'no-reply@limcorp.vn')) // Thay đổi thành email của bạn
+            ->from(config('mail.from.address')) // Thay đổi thành email của bạn
             ->html($content); // Sử dụng nội dung HTML hoặc text tùy chỉnh    
     }
 }
