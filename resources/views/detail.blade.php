@@ -147,7 +147,7 @@
                                 <div class="payment-list">
                                     <div class="payment-item">
                                         <div class="title">Tài nguyên</div>
-                                        <div class="value">AI thay đổi thế giới</div>
+                                        <div class="value">{{ $product->name }}</div>
                                     </div>
                                     <div class="payment-item">
                                         <div class="title">Giá gốc</div>

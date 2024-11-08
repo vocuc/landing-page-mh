@@ -212,4 +212,5 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'register_code_entry' => env('REGISTER_CODE_ENTRY')
 ];
