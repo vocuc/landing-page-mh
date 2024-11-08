@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendOTP extends Mailable
+class SendOTP extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -19,7 +19,7 @@ class SendOTP extends Mailable
     {
         $this->otp = $otp;
         $this->name = $name;
-        $this->subjectTitle = $subjectTitle ?: "[KOCLIVE] Mã OTP xác thực của bạn là: " . $otp;
+        $this->subjectTitle = $subjectTitle ?: "Mã OTP của bạn là: " . $otp;
     }
 
     public function build()
@@ -31,5 +31,6 @@ class SendOTP extends Mailable
 
         return $this->subject($this->subjectTitle)
                     ->from('no-reply@koclive.com') // Thay đổi thành email của bạn
-                    ->html($content); // Sử dụng nội dung HTML hoặc text tùy chỉnh    }
+                    ->html($content); // Sử dụng nội dung HTML hoặc text tùy chỉnh    
+    }
 }

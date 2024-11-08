@@ -5,6 +5,7 @@ namespace App\Services\ProductPayment;
 use App\Models\ProductPayment;
 use Illuminate\Support\Facades\Cache;
 use App\Enums\ProductPayments\Status;
+use App\Mail\SendOTP;
 use App\Services\OTP\ConcreteCreators\SendOTPConcreteCreator;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Mail;
@@ -41,10 +42,9 @@ class ProductPaymentService
         if ($status instanceof Status) {
             $status = $status->value;
         }
+
         if ($statusOriginal != $status && $status == Status::SUCCESS->value) {
-            Mail::raw('OTP : ' . $productPayment->download_code, function ($message) use (&$productPayment) {
-                $message->to($productPayment->email);
-            });
+            Mail::to($productPayment->email)->send(new SendOTP($productPayment->download_code, $productPayment->user_name));
         }
     }
 
