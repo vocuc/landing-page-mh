@@ -28,5 +28,8 @@ class Voucher extends Model
         'updated_at' => 'nullable'
     ];
 
-    
+    public function getTypeLabelAttribute()
+    {
+        return $this->type == \App\Enums\Vouchers\VoucherType::PERCENT->value ? 'Phần trăm' : 'Giá tiền';
+    }
 }

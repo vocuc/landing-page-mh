@@ -44,7 +44,7 @@ class PaymentService
         $dataPaymentCode = [
             'payment_code' => $paymentCode,
             'link_qr_code' => $linkQrCode,
-            'content' => 'GMV ' . $paymentCode
+            'content' => 'THIENNHAI ' . $paymentCode
         ];
 
         return $dataPaymentCode;
@@ -56,7 +56,7 @@ class PaymentService
             config('constants.QR_INFORMATION.BANK_NUMBER') .
             '&number=' . config('constants.QR_INFORMATION.ACCOUNT_NUMBER') .
             '&amount=' . $amount .
-            '&content=GMV ' . $paymentCode;
+            '&content=THIENNHAI ' . $paymentCode;
         return $qrcode;
     }
 

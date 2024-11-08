@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductPayment extends Model
 {
-    const PRICE = 100000;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -18,6 +16,20 @@ class ProductPayment extends Model
         'email',
         'phone',
         'status',
-        'download_code'
+        'download_code',
+        'price',
+        'product_id',
+        'voucher_id',
+        'discount_price'
     ];
+
+    /**
+     * Tính toán giá cuối cùng (sau khi áp dụng giảm giá).
+     *
+     * @return float
+     */
+    public function calculateFinalPrice()
+    {
+        return  $this->price - $this->discount_price;
+    }
 }

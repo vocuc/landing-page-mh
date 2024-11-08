@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-2')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form1.css') }}">
@@ -36,11 +36,8 @@
                         <div class="tag">Sách</div>
                     </div>
                     <div class="group-title">
-                        <h1 class="name-product">Thời đại AI và tương lai loài người chúng ta</h1>
-                        <div class="short-description">Cuối năm 2017, chúng ta chứng kiến sự nổi lên của Douyin, một
-                            ứng dụng đến từ Trung Quốc, và ảnh hưởng của nó. Mọi người bắt đầu xem những đoạn video
-                            ngắn khi chờ tàu điện ngầm và quay những đoạn video ngắn trên đường phố. Dân mạng bắt
-                            đầu trao đổi về các tài khoản mà </div>
+                        <h1 class="name-product">{{ $product->name }}</h1>
+                        <div class="short-description">{{ $product->short_description }}</div>
                     </div>
                     <div class="group-btn-action">
                         <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
@@ -58,21 +55,15 @@
             <div class="description">
                 <h2>Giới thiệu nội dung</h2>
                 <div class="value">
-                    <p>Cuối năm 2017, chúng ta chứng kiến sự nổi lên của Douyin, một ứng dụng đến từ Trung Quốc, và ảnh
-                        hưởng của nó. Mọi người bắt đầu xem những đoạn video ngắn khi chờ tàu điện ngầm và quay những đoạn
-                        video ngắn trên đường phố. Dân mạng bắt đầu trao đổi về các tài khoản mà họ yêu thích, và một số
-                        người bắt đầu nổi tiếng từ nền tảng này. Nhiều bài hát trở nên siêu nổi tiếng chỉ sau một đêm và tất
-                        cả là nhờ Douyin. Mười tám tháng sau, những câu chuyện tương tự bắt đầu xuất hiện trên toàn cầu.
-                        Douyin và phiên bản quốc tế của nó - TikTok, đã vươn lên đỉnh cao thành công ngoài sức tưởng tượng.
-                        Hai ứng dụng này trở thành hiện tượng toàn cầu, vượt xa cả những ước mơ hoang đường nhất của đội ngũ
-                        sáng lập.</p>
+                    <p>{{ $product->full_description }}</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="modalContactPay1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="modalContactPayLabel" aria-hidden="true">
+    <div class="modal fade" id="modalContactPay1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-labelledby="modalContactPayLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -103,6 +94,11 @@
                             <input type="text" class="col-12 input-custom" name="phone"
                                 placeholder="Số điện thoại của bạn">
                         </div>
+                        <div>
+                            <input type="text" class="col-12 input-custom" name="voucher_code"
+                                placeholder="Mã giảm giá">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        </div>
                         <div class="notify">
                             Đảm bảo các thông tin trên của bạn là chính xác
                         </div>
@@ -123,8 +119,8 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalContactPay2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalContactPayLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modalContactPay2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalContactPayLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -155,16 +151,16 @@
                                     </div>
                                     <div class="payment-item">
                                         <div class="title">Giá gốc</div>
-                                        <div class="value">1.500.000</div>
+                                        <div class="value" id='original-price'></div>
                                     </div>
                                     <div class="payment-item">
                                         <div class="title">Giảm giá</div>
-                                        <div class="value">300.000</div>
+                                        <div class="value" id='discount-price'></div>
                                     </div>
                                 </div>
                                 <div class="info-total">
                                     <div class="title">Tổng tiền</div>
-                                    <div class="value">1.200.000</div>
+                                    <div class="value" id='final-price'></div>
                                 </div>
                             </div>
                         </div>
@@ -186,8 +182,8 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalContactPay3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalContactPayLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modalContactPay3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalContactPayLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">

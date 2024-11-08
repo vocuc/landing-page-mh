@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-2')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
 @endpush
@@ -20,17 +20,21 @@
             </h1>
         </div>
         <div class="content">
-            <a href="{{ route('detail') }}" class="product-item">
-                <div class="product-item__img"><img src="{{ asset('images/d831ffea8ef2ca0e08a3df1d172c5170.png') }}"
-                        alt=""></div>
-                <h2 class="product-item__title">Tinh thông AI
-                    làm giàu đơn giản</h2>
-                <div class="group-price">
-                    <div class="price-original">150.000đ</div>
-                    <div class="divier"></div>
-                    <div class="price-discount">98.000đ</div>
-                </div>
-            </a>
+            @foreach ($products as $product)
+                <a href="{{ route('products.detail', ['id' => $product->id]) }}" class="product-item">
+                    <div class="product-item__img"><img src="{{ asset('images/d831ffea8ef2ca0e08a3df1d172c5170.png') }}"
+                            alt=""></div>
+                    <h2 class="product-item__title">{{ $product->name }}</h2>
+                    <div class="group-price">
+                        @if (!empty($product->original_price))
+                            <div class="price-original">{{ number_format($product->original_price, 0, '.', '.') }}</div>
+                            <div class="divier"></div>
+                        @endif
+                        <div class="price-discount">{{ number_format($product->price, 0, '.', '.') }}</div>
+                    </div>
+                </a>
+            @endforeach
+
         </div>
     </section>
 @endsection

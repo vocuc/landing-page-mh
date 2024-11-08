@@ -23,6 +23,9 @@ class ProductPaymentCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'product_id' => [
+                'exists:products,id',
+            ],
             'user_name' => [
                 'required',
                 'string',
@@ -36,19 +39,27 @@ class ProductPaymentCreateRequest extends FormRequest
             'phone' => [
                 'required',
                 new ValidPhone(),
-            ]
+            ],
+            'voucher_code' => [
+                'nullable',
+                'string',
+                'exists:vouchers,code',
+            ],
         ];
     }
 
     public function messages()
     {
         return [
+            'product_id.exists' => 'Sản phẩm không khả dụng.',
             'user_name.required' => 'Không được để trống',
             'user_name.max' => 'Không được nhập quá 255 ký tự',
             'email.required' => 'Không được để trống',
             'email.max' => 'Không được nhập quá 255 ký tự',
             'email.email' => 'Email không đúng định dạng',
             'phone.required' => 'Không được để trống',
+            'phone.required' => 'Không được để trống',
+            'voucher_code.exists' => 'Mã voucher không hợp lệ. Vui lòng kiểm tra lại.',
         ];
     }
 }

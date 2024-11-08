@@ -1,3 +1,6 @@
+@php
+    use App\Enums\Vouchers\VoucherType;
+@endphp
 <!-- Code Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('code', 'Code:') !!}
@@ -6,13 +9,9 @@
 
 <!-- Type Field -->
 <div class="form-group col-sm-6">
-    <div class="form-check">
-        {!! Form::hidden('type', 0, ['class' => 'form-check-input']) !!}
-        {!! Form::checkbox('type', '1', null, ['class' => 'form-check-input']) !!}
-        {!! Form::label('type', 'Type', ['class' => 'form-check-label']) !!}
-    </div>
+    {!! Form::label('type', 'Loại giảm giá:') !!}
+    {!! Form::select('type', [VoucherType::AMOUNT->value => 'Giá tiền', VoucherType::PERCENT->value => 'Phần trăm'], null, ['class' => 'form-control']) !!}
 </div>
-
 <!-- Value Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('value', 'Value:') !!}

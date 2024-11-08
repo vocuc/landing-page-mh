@@ -24,6 +24,30 @@
         "inView": true
     },
     {
+        "name": "short_description",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|string|max:255|string|max:255",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "full_description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required|string|max:65535|string|max:65535",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
         "name": "price",
         "dbType": "decimal",
         "htmlType": "number",
@@ -39,7 +63,7 @@
         "name": "original_price",
         "dbType": "decimal",
         "htmlType": "number",
-        "validations": "required|numeric|numeric",
+        "validations": "nullable|numeric|nullable|numeric",
         "searchable": true,
         "fillable": true,
         "primary": false,

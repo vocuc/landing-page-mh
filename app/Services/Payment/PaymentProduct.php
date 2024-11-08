@@ -44,7 +44,7 @@ class PaymentProduct extends PaymentStrategy
             ];
         }
 
-        if ($amount < ProductPayment::PRICE) {
+        if ($amount < $productPayment->calculateFinalPrice()) {
             return [
                 'status'    =>  false,
                 'message'   => 'Không đủ tiền giao dịch!',

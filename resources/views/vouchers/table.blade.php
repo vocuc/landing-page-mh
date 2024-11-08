@@ -13,7 +13,7 @@
             @foreach($vouchers as $voucher)
                 <tr>
                     <td>{{ $voucher->code }}</td>
-                    <td>{{ $voucher->type }}</td>
+                    <td>{{ $voucher->type_label }}</td>
                     <td>{{ $voucher->value }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['vouchers.destroy', $voucher->id], 'method' => 'delete']) !!}

@@ -81,7 +81,6 @@
 
 .main .product .content .group-info-product .group-info-content {
   display: flex;
-  align-items: center;
   flex-direction: column;
   gap: 26px;
 }

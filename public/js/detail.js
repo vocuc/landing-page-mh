@@ -47,9 +47,16 @@ $(document).ready(function () {
                     $('.loading-wrapper-bg').removeClass('show'); // Hiển thị loading nếu cần
 
                     $('#modalContactPay1').modal('hide');
-                    console.log(data.email	);
-                    setQrPay2(data.link_qr_code)
+                    console.log(data);
                     
+                    setQrPay2(data.link_qr_code)
+
+                    setOriginalPrice(data.price);
+
+                    setDiscountPrice(data.discount_price);
+
+                    setFinalPrice(data.final_price);
+
                     setIDCode(data.id)
 
                     setEmailStep3(data.email)
@@ -105,6 +112,18 @@ $(document).ready(function () {
 
     function setQrPay2(qrLink) {
         $('#modalContactPay2 .payment-info .qr img').attr('src', qrLink);
+    }
+
+    function setFinalPrice(price) {
+        $('#modalContactPay2 .payment-info #final-price').text(price.toLocaleString('de-DE'));
+    }
+
+    function setOriginalPrice(price) {
+        $('#modalContactPay2 .payment-item #original-price').text(price.toLocaleString('de-DE'));
+    }
+
+    function setDiscountPrice(price) {
+        $('#modalContactPay2 .payment-item #discount-price').text(price.toLocaleString('de-DE'));
     }
 
     function setIDCode(id) {

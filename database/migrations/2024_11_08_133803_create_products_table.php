@@ -16,9 +16,13 @@ return new class extends Migration
 
             $table->string('name');
 
+            $table->string('short_description', 255);
+
+            $table->text('full_description'); 
+
             $table->decimal('price', 10, 2);
 
-            $table->decimal('original_price', 10, 2);
+            $table->decimal('original_price', 10, 2)->nullable();
 
             $table->timestamps();
         });

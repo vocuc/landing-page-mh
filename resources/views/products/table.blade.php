@@ -4,6 +4,8 @@
             <thead>
             <tr>
                 <th>Name</th>
+                <th>Short Description</th>
+                <th>Full Description</th>
                 <th>Price</th>
                 <th>Original Price</th>
                 <th colspan="3">Action</th>
@@ -13,6 +15,8 @@
             @foreach($products as $product)
                 <tr>
                     <td>{{ $product->name }}</td>
+                    <td>{{ $product->short_description }}</td>
+                    <td>{{ $product->full_description }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->original_price }}</td>
                     <td  style="width: 120px">
