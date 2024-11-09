@@ -19,3 +19,10 @@
         <p>Vouchers</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('product-payments.index') }}" class="nav-link {{ Request::is('productPayments*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Product Payments</p>
+    </a>
+</li>

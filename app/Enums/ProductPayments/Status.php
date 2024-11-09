@@ -9,4 +9,13 @@ enum Status: int
     case SUCCESS = 1;
 
     case DOWNLOADED = 2;
+
+    public function getLabel()
+    {
+        return match ($this) {
+            self::WAIT => 'Chưa thanh toán',
+            self::SUCCESS => 'Đã thanh toán',
+            self::DOWNLOADED => 'Đã tải xuống',
+        };
+    }
 }

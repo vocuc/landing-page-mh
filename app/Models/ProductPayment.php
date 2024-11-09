@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ProductPayments\Status;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -32,6 +33,13 @@ class ProductPayment extends Model
     public function calculateFinalPrice()
     {
         return  $this->price - $this->discount_price;
+    }
+
+    public function getStatusLabelAttribute()
+    {
+        $status = Status::tryFrom($this->status);
+
+        return $status->getLabel();
     }
 
     public function product() {

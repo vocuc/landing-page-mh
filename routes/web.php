@@ -30,4 +30,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
 
     Route::resource('vouchers', App\Http\Controllers\Admin\VoucherController::class);
+
+    Route::resource('product-payments', App\Http\Controllers\Admin\ProductPaymentController::class)->only(['index', 'show']);
 });
+
