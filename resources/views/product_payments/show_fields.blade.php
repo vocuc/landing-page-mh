@@ -19,7 +19,7 @@
 <!-- Status Field -->
 <div class="col-sm-12">
     {!! Form::label('status', 'Status:') !!}
-    <p>{{ $productPayment->status }}</p>
+    <p>{{ $productPayment->status_label }}</p>
 </div>
 
 <!-- Download Code Field -->

@@ -7,7 +7,7 @@
 <!-- Type Field -->
 <div class="col-sm-12">
     {!! Form::label('type', 'Type:') !!}
-    <p>{{ $voucher->type }}</p>
+    <p>{{ $voucher->type_label }}</p>
 </div>
 
 <!-- Value Field -->
