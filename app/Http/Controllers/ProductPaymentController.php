@@ -10,6 +10,8 @@ use App\Models\Product;
 use App\Models\ProductPayment;
 use App\Models\Voucher;
 use App\Services\Payment\PaymentService;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Response;
 
 class ProductPaymentController extends Controller
 {
@@ -78,14 +80,28 @@ class ProductPaymentController extends Controller
     {
         $data = $request->validated();
 
-        $productPayment = ProductPayment::where('status', Status::SUCCESS)->where('download_code', $data['code'])->first();
+        $productPayment = ProductPayment::where('status', Status::SUCCESS)
+            ->where('download_code', $data['code'])->first();
 
-        if ($productPayment === null) {
+        if ($productPayment === null || $productPayment->product === null) {
             abort(404);
         }
+        
+        $response = Http::get($productPayment->product->download_url);
 
-        $filePath = public_path('images/bg-icon-1.png');
+        if ($response->successful()) {
+            $filename = basename(parse_url($productPayment->product->download_url, PHP_URL_PATH));
 
-        return response()->download($filePath);
+            $productPayment->status = Status::DOWNLOADED;
+
+            $productPayment->save();
+
+            return Response::make($response->body(), 200, [
+                'Content-Type' => $response->header('Content-Type'),
+                'Content-Disposition' => 'attachment; filename="' . $filename . '"'
+            ]);
+        } else {
+            return response()->json(['error' => 'Không thể tải tệp từ URL.'], 404);
+        }
     }
 }

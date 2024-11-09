@@ -28,3 +28,9 @@
     <p>{{ $product->original_price }}</p>
 </div>
 
+<!-- Download Url Field -->
+<div class="col-sm-12">
+    {!! Form::label('download_url', 'Download Url:') !!}
+    <p>{{ $product->download_url }}</p>
+</div>
+

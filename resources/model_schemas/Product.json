@@ -94,5 +94,17 @@
         "inForm": false,
         "inIndex": false,
         "inView": false
+    },
+    {
+        "name": "download_url",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|string|max:500|string|max:500",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
     }
 ]

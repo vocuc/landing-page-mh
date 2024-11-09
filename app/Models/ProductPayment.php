@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductPayment extends Model
 {
@@ -31,5 +32,9 @@ class ProductPayment extends Model
     public function calculateFinalPrice()
     {
         return  $this->price - $this->discount_price;
+    }
+
+    public function product() {
+        return $this->belongsTo(Product::class);
     }
 }

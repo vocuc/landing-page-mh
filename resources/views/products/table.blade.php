@@ -8,6 +8,7 @@
                 <th>Full Description</th>
                 <th>Price</th>
                 <th>Original Price</th>
+                <th>Download Url</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
@@ -19,6 +20,7 @@
                     <td>{{ $product->full_description }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->original_price }}</td>
+                    <td>{{ $product->download_url }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

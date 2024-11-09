@@ -7,4 +7,6 @@ enum Status: int
     case WAIT = 0;
 
     case SUCCESS = 1;
+
+    case DOWNLOADED = 2;
 }

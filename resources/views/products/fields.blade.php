@@ -27,3 +27,9 @@
     {!! Form::label('original_price', 'Original Price:') !!}
     {!! Form::number('original_price', null, ['class' => 'form-control']) !!}
 </div>
+
+<!-- Download Url Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('download_url', 'Download Url:') !!}
+    {!! Form::text('download_url', null, ['class' => 'form-control', 'required', 'maxlength' => 500, 'maxlength' => 500]) !!}
+</div>

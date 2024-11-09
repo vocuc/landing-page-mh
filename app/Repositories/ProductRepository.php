@@ -12,7 +12,8 @@ class ProductRepository extends BaseRepository
         'short_description',
         'full_description',
         'price',
-        'original_price'
+        'original_price',
+        'download_url'
     ];
 
     public function getFieldsSearchable(): array
