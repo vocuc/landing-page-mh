@@ -28,7 +28,7 @@ class ProductPaymentController extends Controller
 
         $productPrice = round($product->price);
 
-        if ($request->has('voucher_code')) {
+        if (!empty($data['voucher_code'])) {
             $voucher = Voucher::where('code', $data['voucher_code'])->first();
 
             $data['discount_price'] = round($voucher->type == \App\Enums\Vouchers\VoucherType::PERCENT->value
