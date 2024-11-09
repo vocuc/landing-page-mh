@@ -32,5 +32,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('vouchers', App\Http\Controllers\Admin\VoucherController::class);
 
     Route::resource('product-payments', App\Http\Controllers\Admin\ProductPaymentController::class)->only(['index', 'show']);
+
+    Route::resource('contact-forms', App\Http\Controllers\Admin\ContactFormController::class)->only(['index', 'show']);
 });
+
 

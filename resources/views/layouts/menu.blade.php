@@ -26,3 +26,10 @@
         <p>Product Payments</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('contact-forms.index') }}" class="nav-link {{ Request::is('contactForms*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Contact Forms</p>
+    </a>
+</li>
