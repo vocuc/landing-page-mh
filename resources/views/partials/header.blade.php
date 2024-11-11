@@ -4,8 +4,8 @@
         <h1 class="header__title">Thiennhai</h1>
     </a>
     <div class="header__right">
-        <div class="header__tiktok-link">
+        <a href="{{ route('login') }}" class="header__tiktok-link">
             <img src="{{ asset('images/tiktok.png') }}" alt="">
-        </div>
+        </a>
     </div>
 </header>
