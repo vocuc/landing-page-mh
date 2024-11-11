@@ -24,7 +24,7 @@ class ContactFormController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $contactForms = $this->contactFormRepository->paginate(10);
+        $contactForms = $this->contactFormRepository->allQuery()->orderBy('id', 'DESC')->paginate(10);
 
         return view('contact_forms.index')
             ->with('contactForms', $contactForms);

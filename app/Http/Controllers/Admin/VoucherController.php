@@ -24,7 +24,7 @@ class VoucherController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $vouchers = $this->voucherRepository->paginate(10);
+        $vouchers = $this->voucherRepository->allQuery()->orderBy('id', 'DESC')->paginate(10);
 
         return view('vouchers.index')
             ->with('vouchers', $vouchers);

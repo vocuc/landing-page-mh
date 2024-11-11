@@ -24,7 +24,7 @@ class ProductController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $products = $this->productRepository->paginate(10);
+        $products = $this->productRepository->allQuery()->orderBy('id', 'DESC')->paginate(10);
 
         return view('products.index')
             ->with('products', $products);

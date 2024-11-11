@@ -24,7 +24,7 @@ class ProductPaymentController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $productPayments = $this->productPaymentRepository->paginate(10);
+        $productPayments = $this->productPaymentRepository->allQuery()->orderBy('id', 'DESC')->paginate(10);
 
         return view('product_payments.index')
             ->with('productPayments', $productPayments);
