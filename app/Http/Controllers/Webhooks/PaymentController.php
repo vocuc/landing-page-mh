@@ -39,14 +39,16 @@ class PaymentController extends Controller
             ], 400);
         }
 
-        preg_match('/\b\w*PAYMENT\w*\b/', $paymentData['content'], $paymentCode);
+        preg_match('/\bP\s?AYMENT\w*\b/', $paymentData['content'], $paymentCode);
         
-        if (!isset($paymentCode)) {
+        if(count($paymentCode) == 0){
             return response()->json([
                 'status'    =>  'failed',
                 'message'   => 'Validate payment_code error',
             ], 400);
         }
+
+        $paymentCode = preg_replace('/\s/', '', $paymentCode[0]);
 
         $payment = $this->paymentService->getPayment($paymentCode);
 
