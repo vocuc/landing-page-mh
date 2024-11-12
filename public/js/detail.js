@@ -176,6 +176,8 @@ $(document).ready(function () {
                     },
                     success: function (blob) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
+                        
+                        $('#modalContactPay3').modal('hide');
 
                         // Tạo một URL đối tượng từ blob
                         const url = window.URL.createObjectURL(blob);
@@ -194,8 +196,6 @@ $(document).ready(function () {
                         $("#formPay3").validate().resetForm();
 
                         alert('Tải thành công')
-
-                        $('#modalContactPay3').modal('hide');
                     },
                     error: function (error) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
@@ -206,7 +206,7 @@ $(document).ready(function () {
                             };
 
                             showErrorResponse3(listError);
-                            
+
                             return;
                         }
 
