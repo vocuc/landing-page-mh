@@ -55,7 +55,7 @@
             <div class="description">
                 <h2>Giới thiệu nội dung</h2>
                 <div class="value">
-                    <p>{{ $product->full_description }}</p>
+                    {!! $product->full_description !!}
                 </div>
             </div>
         </div>

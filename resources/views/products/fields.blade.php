@@ -4,6 +4,12 @@
     {!! Form::text('name', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
 </div>
 
+<!-- Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('image_link', 'Image Link:') !!}
+    {!! Form::text('image_link', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+</div>
+
 <!-- Short Description Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('short_description', 'Short Description:') !!}
@@ -46,3 +52,12 @@
     @endif
     {!! Form::file('download_url', ['class' => 'form-control']) !!}
 </div>
+<script src="{{ asset('js/ckeditor.js') }}"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#full_description'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
