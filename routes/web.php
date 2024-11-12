@@ -39,11 +39,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::resource('contact-forms', App\Http\Controllers\Admin\ContactFormController::class)->only(['index', 'show']);
 });
-<<<<<<< HEAD
 
 
 Route::get('/privacy-policy', function () {
     return view('privacy');
 });
-=======
->>>>>>> d14b1c320bfadb41702393a63fab235fb74d0af1
