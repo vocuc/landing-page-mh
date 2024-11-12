@@ -48,7 +48,7 @@ $(document).ready(function () {
 
                     $('#modalContactPay1').modal('hide');
                     console.log(data);
-                    
+
                     setQrPay2(data.link_qr_code)
 
                     setOriginalPrice(data.price);
@@ -132,18 +132,18 @@ $(document).ready(function () {
 
     function maskEmail(email) {
         const atIndex = email.indexOf('@');
-        
+
         if (atIndex >= 3) {
             return '***' + email.slice(3);
         }
-        
+
         return '*'.repeat(atIndex) + email.slice(atIndex);
     }
 
     function setEmailStep3(email) {
         $('#modalContactPay3 #email-send-code').text(maskEmail(email));
     }
-    
+
     const optionConfigValidate2 = {
         debug: false,
         rules: {
@@ -158,75 +158,84 @@ $(document).ready(function () {
         },
         errorElement: 'span',
         errorClass: 'form-input-error',
-        beforeSend: function () {
-            $('.loading-wrapper-bg').addClass('show'); // Hiển thị loading nếu cần
-
-        },
         submitHandler: function (form) {
             let formData = new FormData(form);
+            
+            if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
+                $.ajax({
+                    url: form.action,
+                    data: formData,
+                    method: 'POST',
+                    processData: false,
+                    contentType: false,
+                    xhrFields: {
+                        responseType: 'blob' // Chỉ định kiểu phản hồi là blob
+                    },
+                    beforeSend: function () {
+                        $('#modalContactPay3 .btn-custom .spinner-border').show();
+                    },
+                    success: function (blob) {
+                        $('#modalContactPay3 .btn-custom .spinner-border').hide();
 
-            $.ajax({
-                url: form.action,
-                data: formData,
-                method: 'POST',
-                processData: false,
-                contentType: false,
-                xhrFields: {
-                    responseType: 'blob' // Chỉ định kiểu phản hồi là blob
-                },
+                        // Tạo một URL đối tượng từ blob
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = 'myfile.pdf'; // Tên file khi tải về
+                        document.body.appendChild(a);
+                        a.click(); // Kích hoạt tải xuống
+                        a.remove(); // Xóa link tạm thời
+                        window.URL.revokeObjectURL(url); // Giải phóng URL đối tượng
 
-                success: function (blob) {
-                    $('.loading-wrapper-bg').removeClass('show'); // Hiển thị loading nếu cần
+                        $('#formPay3').modal('hide');
 
-                    // Tạo một URL đối tượng từ blob
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'myfile.pdf'; // Tên file khi tải về
-                    document.body.appendChild(a);
-                    a.click(); // Kích hoạt tải xuống
-                    a.remove(); // Xóa link tạm thời
-                    window.URL.revokeObjectURL(url); // Giải phóng URL đối tượng
+                        $("#formPay3")[0].reset();
 
-                    $('#formPay3').modal('hide');
+                        $("#formPay3").validate().resetForm();
 
-                    $("#formPay3")[0].reset();
+                        alert('Tải thành công')
 
-                    $("#formPay3").validate().resetForm();
+                        $('#modalContactPay3').modal('hide');
+                    },
+                    error: function (error) {
+                        $('#modalContactPay3 .btn-custom .spinner-border').hide();
 
-                    alert('Tải thành công')
+                        if (error.status === 404) {
+                            const listError = {
+                                code: ['Mã code không hợp lệ']
+                            };
 
-                    $('#modalContactPay3').modal('hide');
-                },
-                error: function (error) {
-                    $('.loading-wrapper-bg').removeClass('show'); // Hiển thị loading nếu cần
+                            showErrorResponse3(listError);
+                            
+                            return;
+                        }
 
-                    if (error.status === 422) {
-                        const listError = error.responseJSON.errors;
+                        if (error.status === 422) {
+                            const listError = error.responseJSON.errors;
 
-                        showErrorResponse3(listError);
-                    }
+                            showErrorResponse3(listError);
+                        }
 
-                    if (error.status == 302 && error.responseJSON && error.responseJSON.link_redirect) {
-                        location.href = error.responseJSON.link_redirect
-                        return
-                    }
+                        if (error.status == 302 && error.responseJSON && error.responseJSON.link_redirect) {
+                            location.href = error.responseJSON.link_redirect
+                            return
+                        }
 
-                    if (error.status == 400 && error.responseJSON && error.responseJSON.message) {
+                        if (error.status == 400 && error.responseJSON && error.responseJSON.message) {
+                            alert('Không thành công')
+
+                            return
+                        }
+
                         alert('Không thành công')
-
-                        return
                     }
+                });
+            }
 
-                    alert('Không thành công')
-                }
-            });
         }
     };
 
     const showErrorResponse3 = (listError) => {
-        console.log(1);
-
         var errors = {};
 
         for (var key in listError) {
