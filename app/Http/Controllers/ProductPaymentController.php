@@ -99,6 +99,40 @@ class ProductPaymentController extends Controller
             return response()->json(['error' => 'Không thể tải tệp từ URL.'], 404);
         }
 
-        return response()->download($filePath);
+        return response()->json(
+            ['link_redirect' => route('products.read-book', ['code' => $data['code']])]
+        );
+    }
+
+    public function readBook($code)
+    {
+        $productPayment = ProductPayment::where('status', Status::SUCCESS)
+            ->where('download_code', $code)->first();
+
+        if ($productPayment === null || $productPayment->product === null) {
+            abort(404);
+        }
+
+        $filePath = $this->productRepository->getProductFilePath($productPayment->product->download_url);
+
+        if (!File::exists($filePath)) {
+            abort(404);
+        }
+
+        return view('read-book', compact('code'));
+    }
+
+    public function getBook($code)
+    {
+        $productPayment = ProductPayment::where('status', Status::SUCCESS)
+            ->where('download_code', $code)->first();
+
+        $filePath = $this->productRepository->getProductFilePath($productPayment->product->download_url);
+
+        if (!File::exists($filePath)) {
+            abort(404);
+        }
+
+        return response()->file($filePath);
     }
 }
