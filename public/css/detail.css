@@ -162,7 +162,7 @@
 @media only screen and (max-width: 576px) {
 
   .group-btn-action .btn-type-1 {
-    width: calc(60% - 17px) !important;
+    width: calc(70% - 17px) !important;
   }
 
   .group-btn-action .btn-type-2 {
