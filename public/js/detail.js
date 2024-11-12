@@ -173,9 +173,13 @@ $(document).ready(function () {
                     },
                     beforeSend: function () {
                         $('#modalContactPay3 .btn-custom .spinner-border').show();
+
+                        $('#modalContactPay3 .btn-custom .btn-type-1__icon').hide();
                     },
                     success: function (blob) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
+
+                        $('#modalContactPay3 .btn-custom .btn-type-1__icon').show();
                         
                         $('#modalContactPay3').modal('hide');
 
@@ -200,6 +204,7 @@ $(document).ready(function () {
                     error: function (error) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
 
+                        $('#modalContactPay3 .btn-custom .btn-type-1__icon').show();
                         if (error.status === 404) {
                             const listError = {
                                 code: ['Mã code không hợp lệ']
