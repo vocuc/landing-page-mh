@@ -7,13 +7,23 @@
 <!-- Short Description Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('short_description', 'Short Description:') !!}
-    {!! Form::text('short_description', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    {!! Form::text('short_description', null, [
+        'class' => 'form-control',
+        'required',
+        'maxlength' => 255,
+        'maxlength' => 255,
+    ]) !!}
 </div>
 
 <!-- Full Description Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('full_description', 'Full Description:') !!}
-    {!! Form::textarea('full_description', null, ['class' => 'form-control', 'required', 'maxlength' => 65535, 'maxlength' => 65535]) !!}
+    {!! Form::textarea('full_description', null, [
+        'class' => 'form-control',
+        'required',
+        'maxlength' => 65535,
+        'maxlength' => 65535,
+    ]) !!}
 </div>
 
 <!-- Price Field -->
@@ -30,6 +40,9 @@
 
 <!-- Download Url Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('download_url', 'Download Url:') !!}
-    {!! Form::text('download_url', null, ['class' => 'form-control', 'required', 'maxlength' => 500, 'maxlength' => 500]) !!}
+    {!! Form::label('download_url', 'File Upload:') !!}
+    @if ($product->download_url)
+        <p>Current file: {{ $product->download_url }}</p>
+    @endif
+    {!! Form::file('download_url', ['class' => 'form-control']) !!}
 </div>

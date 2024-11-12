@@ -25,4 +25,17 @@ class ProductRepository extends BaseRepository
     {
         return Product::class;
     }
+
+    public function uploadFile($file)
+    {
+        $fileName = time() . '_' . $file->getClientOriginalName();
+                
+        $filePath = $file->storeAs('public/download', $fileName);
+
+        return $fileName;  
+    }
+
+    public function getProductFilePath($fileName) {
+        return storage_path('app/public/download/' . $fileName);
+    }
 }
