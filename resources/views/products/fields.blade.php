@@ -31,9 +31,6 @@
     {!! Form::label('full_description', 'Full Description:') !!}
     {!! Form::textarea('full_description', null, [
         'class' => 'form-control',
-        'required',
-        'maxlength' => 65535,
-        'maxlength' => 65535,
     ]) !!}
 </div>
 
