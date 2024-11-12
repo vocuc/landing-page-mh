@@ -22,7 +22,7 @@
         <div class="content">
             @foreach ($products as $product)
                 <a href="{{ route('products.detail', ['id' => $product->id]) }}" class="product-item">
-                    <div class="product-item__img"><img src="{{ asset('images/d831ffea8ef2ca0e08a3df1d172c5170.png') }}"
+                    <div class="product-item__img"><img src="{{ $product->image_link }}"
                             alt=""></div>
                     <h2 class="product-item__title">{{ $product->name }}</h2>
                     <div class="group-price">

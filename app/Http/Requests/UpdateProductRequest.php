@@ -25,7 +25,9 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         $rules = Product::$rules;
-        
+
+        $rules['download_url'] = 'file';
+
         return $rules;
     }
 }

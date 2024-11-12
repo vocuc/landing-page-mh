@@ -160,34 +160,28 @@ $(document).ready(function () {
         errorClass: 'form-input-error',
         submitHandler: function (form) {
             let formData = new FormData(form);
-            
+
             if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
                 $.ajax({
                     url: form.action,
                     data: formData,
                     method: 'POST',
+                    dataType: 'json',
                     processData: false,
                     contentType: false,
-                    xhrFields: {
-                        responseType: 'blob' // Chỉ định kiểu phản hồi là blob
-                    },
                     beforeSend: function () {
                         $('#modalContactPay3 .btn-custom .spinner-border').show();
+
+                        $('#modalContactPay3 .btn-custom .btn-type-1__icon').hide();
                     },
-                    success: function (blob) {
+                    success: function (data) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
-                        
+
+                        $('#modalContactPay3 .btn-custom .btn-type-1__icon').show();
+
                         $('#modalContactPay3').modal('hide');
 
-                        // Tạo một URL đối tượng từ blob
-                        const url = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = 'myfile.pdf'; // Tên file khi tải về
-                        document.body.appendChild(a);
-                        a.click(); // Kích hoạt tải xuống
-                        a.remove(); // Xóa link tạm thời
-                        window.URL.revokeObjectURL(url); // Giải phóng URL đối tượng
+                        location.href = data.link_redirect
 
                         $('#formPay3').modal('hide');
 
@@ -200,6 +194,7 @@ $(document).ready(function () {
                     error: function (error) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
 
+                        $('#modalContactPay3 .btn-custom .btn-type-1__icon').show();
                         if (error.status === 404) {
                             const listError = {
                                 code: ['Mã code không hợp lệ']
@@ -215,7 +210,7 @@ $(document).ready(function () {
 
                             showErrorResponse3(listError);
                         }
-
+                        
                         if (error.status == 302 && error.responseJSON && error.responseJSON.link_redirect) {
                             location.href = error.responseJSON.link_redirect
                             return

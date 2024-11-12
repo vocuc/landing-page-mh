@@ -43,10 +43,14 @@ class ProductController extends AppBaseController
      */
     public function store(CreateProductRequest $request)
     {
-        $input = $request->all();
+        $params = $request->validated();
 
-        $product = $this->productRepository->create($input);
+        if(!empty($params['download_url'])){
+            $params['download_url'] = $this->productRepository->uploadFile($params['download_url']);
+        }
 
+        $product = $this->productRepository->create($params);
+        
         Flash::success('Product saved successfully.');
 
         return redirect(route('products.index'));
@@ -97,7 +101,13 @@ class ProductController extends AppBaseController
             return redirect(route('products.index'));
         }
 
-        $product = $this->productRepository->update($request->all(), $id);
+        $params = $request->validated();
+
+        if(!empty($params['download_url'])){
+            $params['download_url'] = $this->productRepository->uploadFile($params['download_url']);
+        }
+
+        $product = $this->productRepository->update($params, $id);
 
         Flash::success('Product updated successfully.');
 

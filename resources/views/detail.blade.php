@@ -68,7 +68,7 @@
             <div class="description">
                 <h2>Giới thiệu nội dung</h2>
                 <div class="value">
-                    <p>{{ $product->full_description }}</p>
+                    {!! $product->full_description !!}
                 </div>
             </div>
         </div>
@@ -222,15 +222,16 @@
                         </div>
                         <div class="group-btn-action form-footer">
                             <button type="submit" class="btn-custom btn-type-1">
-                                <div class="spinner-border" style="display: none" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                  </div>
+
                                 <div>Tải xuống</div>
                                 <div class="btn-type-1__icon"><svg width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 6L12 18M12 18L8 14M12 18L16 14" stroke="white" stroke-width="1.6"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></div>
+                                <div class="spinner-border" style="display: none;width:30px;height:30px;" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </button>
                         </div>
 

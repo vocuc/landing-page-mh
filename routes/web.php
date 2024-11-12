@@ -22,6 +22,10 @@ Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']
 
 Route::get('/products/{id}',  [App\Http\Controllers\ProductController::class, 'show'])->name('products.detail');
 
+Route::get('/products/{code}/read-book',  [App\Http\Controllers\ProductPaymentController::class, 'readBook'])->name('products.read-book');
+
+Route::get('/products/{code}/get-book',  [App\Http\Controllers\ProductPaymentController::class, 'getBook'])->name('products.get-book');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
@@ -35,8 +39,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::resource('contact-forms', App\Http\Controllers\Admin\ContactFormController::class)->only(['index', 'show']);
 });
+<<<<<<< HEAD
 
 
 Route::get('/privacy-policy', function () {
     return view('privacy');
 });
+=======
+>>>>>>> d14b1c320bfadb41702393a63fab235fb74d0af1
