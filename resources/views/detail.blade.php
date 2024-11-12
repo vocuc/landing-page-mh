@@ -1,5 +1,6 @@
 @extends('layouts.app-2')
 @push('styles')
+    <link rel="stylesheet" href="{{ asset('css/ckeditor5.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form2.css') }}">
@@ -18,10 +19,10 @@
                     Quay lại
                 </div>
             </a>
-			 
+
             <!--<div class="title">
-                Chi tiết tài nguyên
-            </div>-->
+                                    Chi tiết tài nguyên
+                                </div>-->
         </div>
         <div class="content w-963 m-auto">
             <div class="group-info-product">
@@ -30,18 +31,20 @@
                         <div class="banner_bg"></div>
                         <img src="{{ asset('images/book-ai.png') }}" alt="">
                     </div>
-					<div class="group-btn-action" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-    <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
-        <div>Mua ngay</div>
-        <div class="btn-type-1__icon">
-            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
-                      stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </div>
-    </div>
-    <!--<div class="btn-custom btn-type-2">Liên hệ tư vấn</div>-->
-</div>
+                    <div class="group-btn-action"
+                        style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                        <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
+                            <div>Mua ngay</div>
+                            <div class="btn-type-1__icon">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <!--<div class="btn-custom btn-type-2">Liên hệ tư vấn</div>-->
+                    </div>
                 </div>
 
                 <div class="group-info-content">
@@ -53,21 +56,21 @@
                         <div class="short-description">{{ $product->short_description }}</div>
                     </div>
                     <!--<div class="group-btn-action">
-                        <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
-                            <div>Mua ngay</div>
-                            <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></div>
-                        </div>
-                        <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
-                    </div>-->
+                                            <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
+                                                <div>Mua ngay</div>
+                                                <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg></div>
+                                            </div>
+                                            <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
+                                        </div>-->
                 </div>
             </div>
             <div class="description">
                 <h2>Giới thiệu nội dung</h2>
-                <div class="value">
+                <div class="value ck ck-editor__editable ck-content">
                     {!! $product->full_description !!}
                 </div>
             </div>
@@ -96,11 +99,13 @@
                             <div class="sub-title">Nhập thông tin của bạn để nhận được mã code</div>
                         </div>
                         <div>
-                            <input type="text" class="col-12 input-custom" name="user_name" placeholder="Tên của bạn">
+                            <input type="text" class="col-12 input-custom" name="user_name"
+                                placeholder="Tên của bạn">
 
                         </div>
                         <div>
-                            <input type="text" class="col-12 input-custom" name="email" placeholder="Email của bạn">
+                            <input type="text" class="col-12 input-custom" name="email"
+                                placeholder="Email của bạn">
 
                         </div>
                         <div>

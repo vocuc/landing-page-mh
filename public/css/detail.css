@@ -185,9 +185,16 @@
     max-width: 963px;
     width: auto;
   }
+
   .main .product .content .description {
     margin-top: 55px;
   }
+
+  .main .product .content .description .value img {
+    width: 100%;
+    height: auto;
+  }
+
   .main .product .content .group-info-product {
     flex-direction: column;
     justify-content: center;
