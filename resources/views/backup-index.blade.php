@@ -32,14 +32,14 @@
                 </div>
                 <div class="group-btn-action">
                     <a href="{{ route('products') }}" class="btn-custom btn-type-1">
-                        <div>Tải Tài Liệu Ngay</div>
+                        <div>Tải tài liệu miễn phí</div>
                         <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg></div>
                     </a>
-                    <!--<div class="btn-custom btn-type-2">Tham gia cộng đồng</div> -->
+                    <div class="btn-custom btn-type-2">Tham gia cộng đồng</div>
                 </div>
             </div>
             <div class="banner__left">
@@ -68,70 +68,34 @@
             </div>
             <div class="text">
                 <p class="sub-text">
-    Có thể kiếm tiền online mà không cần lộ mặt hay chia sẻ thông tin cá nhân không? Chắc chắn có!
-</p>
+                    Liệu có cách nào để chúng ta có thể kiếm tiền online mà không cần phải đưa
+                    gương mặt hay bất kỳ điều
+                    gì về cá nhân lên mạng hay không?
+                </p>
 
-<p>Thiên Nhai đã khám phá một phương pháp đơn giản và hiệu quả hơn nhiều.</p>
+                <p>Tôi đã tìm ra một cách đơn giản hơn nhiều.</p>
 
-<p>Tại đây, Thiên Nhai sẽ hướng dẫn bạn cách tạo sản phẩm và video bán hàng mà danh tính vẫn được bảo vệ hoàn toàn.</p>
+                <p>Ở đây tôi sẽ dạy bạn làm sản phẩm, bán hàng, mà không ai biết bạn là ai.</p>
 
-<p>Chỉ cần sử dụng Bộ kỹ năng chỉnh sửa video đặc biệt, kết hợp với giọng nói AI độc đáo,</p>
+                <p>Chỉ với ChatGPT và social media</p>
 
-<p>Bạn sẽ có thể tạo ra một cỗ máy in tiền tự động trong năm 2024.<br>
-    Cách thức thực hiện ư?<br>
-    Hãy xem và sở hữu ngay những video triệu view như Thiên Nhai, nhờ khóa học này.
-</p>
+                <p>Bạn có thể tạo ra một cỗ máy in tiền tự động trong năm 2024.<br>
+                    Cách làm ư?</p>
             </div>
-			<div class="text" style="text-align: center;">
-                <p class="sub-text" >
-			  <b>Doanh Thu Ấn Tượng Từ Kênh Thiên Nhai Tianya </b></p>
-            </div>
-			<div class="img-2">
-					<img src="{{ asset('images/gmv1.png') }}" alt="">
-			</div>
-			<div class="text" style="text-align: center;">
-                <p class="sub-text" >
-			  <b>Kỹ Năng Kiếm Tiền Online Mà Không Cần Lộ Diện </b></p>
-            </div>
-			<div class="img-2">
-					<img src="{{ asset('images/gmv2.png') }}" alt="">
-			</div>
-			<div class="text" style="text-align: center;">
-                <p class="sub-text">
-			 <b>Chủ Động Thời Gian, Chinh Phục Tự Do Tài Chính  </b></p>
-            </div>
-			<div class="img-2">
-					<img src="{{ asset('images/a1.jpg') }}" alt="">
-			</div>
-			<div class="text" style="text-align: center;">
-                <p class="sub-text" >
-			  <b>Bán Hàng Hiệu Quả Mà Không Cần Xuất Hiện Trước Camera </b></p>
-            </div>
-            <div class="img-2"><img src="{{ asset('images/listsach.png') }}" alt="">
+            <div class="img-2"><img src="{{ asset('images/image18.png') }}" alt="">
             </div>
         </div>
         <img src="images/bg-icon-2.png" class="bg-icon-1" alt="">
 
     </section>
-	<div class="group-btn-action">
-                    <a href="{{ route('products') }}" class="btn-custom btn-type-1">
-                        <div>Tải Tài Liệu Ngay</div>
-                        <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg></div>
-                    </a>
-                    <!--<div class="btn-custom btn-type-2">Tham gia cộng đồng</div> -->
-                </div>
     <section class="contact">
         <div class="title">
             <div class="title__group--sologan mw-1220 m-auto">
                 <h2 class="title__group--sologan-content">
-                    Hỗ Trợ
+                    Miễn phí tài liệu về AI
                 </h2>
                 <div class="title__group--sologan-sub-content">
-                    Hãy để lại thông tin để ThienNhai hỗ trợ bạn sớm nhé!
+                    Hãy để lại thông tin để tôi gửi cho bạn nhé!
                 </div>
                 <div class="line-title"></div>
             </div>

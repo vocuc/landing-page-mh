@@ -1,9 +1,20 @@
 <footer class="footer">
     <div class="footer-copyright  mw-1220 m-auto">
-        <div class="footer-copyright__right">© 2024 GMV. All Rights Reserved.</div>
+        <div class="footer-copyright__right">© 2024 ThienNhaiTianya. All Rights Reserved.</div>
         <div class="footer-copyright__left">
-            <div>Privacy Policy</div>
+            <div>
+    <a href="https://thiennhai.com/privacy-policy" target="_blank">Privacy Policy</a>
+</div>
             <div class="terms">Terms of Service</div>
         </div>
+		<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TWPQKQWLM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0TWPQKQWLM');
+</script>
     </div>
 </footer>
