@@ -92,7 +92,7 @@ $(document).ready(function () {
 
                         return
                     }
-                    
+
                     alert('Không thành công')
                 }
             });
@@ -299,8 +299,9 @@ $(document).ready(function () {
                         $('#modalContactPay4 .btn-custom .btn-type-1__icon').show();
 
                         $('#modalContactPay4').modal('hide');
-                        window.open(data.link_redirect, "_blank");
 
+                        location.href = data.link_redirect;
+                        
                         $('#formPay4').modal('hide');
 
                         $("#formPay4")[0].reset();
