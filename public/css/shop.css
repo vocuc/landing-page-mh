@@ -136,4 +136,21 @@
   .footer-copyright__left .terms {
     display: none;
   }
+
+  .main .products .content .product-item {
+    width: calc(25% - 52px);
+  }
+}
+
+
+@media only screen and (max-width: 884px) {
+  .main .products .content .product-item {
+    width: calc(33% - 48px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .main .products .content .product-item {
+    width: calc(50% - 46px)
+  }
 }
