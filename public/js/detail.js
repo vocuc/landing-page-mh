@@ -87,6 +87,12 @@ $(document).ready(function () {
                         return
                     }
 
+                    if (error.status == 429) {
+                        alert('Bạn gửi quá nhiều yêu cầu')
+
+                        return
+                    }
+                    
                     alert('Không thành công')
                 }
             });
@@ -220,6 +226,12 @@ $(document).ready(function () {
                             return
                         }
 
+                        if (error.status == 429) {
+                            alert('Bạn gửi quá nhiều yêu cầu')
+
+                            return
+                        }
+
                         alert('Không thành công')
                     }
                 });
@@ -322,6 +334,12 @@ $(document).ready(function () {
 
                         if (error.status == 400 && error.responseJSON && error.responseJSON.message) {
                             alert('Không thành công')
+
+                            return
+                        }
+
+                        if (error.status == 429) {
+                            alert('Bạn gửi quá nhiều yêu cầu')
 
                             return
                         }
