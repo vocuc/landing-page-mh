@@ -1,7 +1,7 @@
 @extends('layouts.app-2')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}?v={{ filemtime(public_path('css/main.css')) }}">
 @endpush
 @section('title', 'Trang Chủ')
 @section('content')

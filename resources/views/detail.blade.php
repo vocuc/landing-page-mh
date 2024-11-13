@@ -1,10 +1,10 @@
 @extends('layouts.app-2')
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/ckeditor5.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/form1.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/form2.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/form3.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ckeditor5.css') }}?v={{ filemtime(public_path('css/ckeditor5.css')) }}" />
+    <link rel="stylesheet" href="{{ asset('css/detail.css') }}?v={{ filemtime(public_path('css/detail.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/form1.css') }}?v={{ filemtime(public_path('css/form1.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/form2.css') }}?v={{ filemtime(public_path('css/form2.css')) }}">
+    <link rel="stylesheet" href="{{ asset('css/form3.css') }}?v={{ filemtime(public_path('css/form3.css')) }}">
 @endpush
 @section('title', 'Chi tiết sản phẩm')
 @section('content')
@@ -21,8 +21,8 @@
             </a>
 
             <!--<div class="title">
-                                    Chi tiết tài nguyên
-                                </div>-->
+                                            Chi tiết tài nguyên
+                                        </div>-->
         </div>
         <div class="content w-963 m-auto">
             <div class="group-info-product">
@@ -35,6 +35,17 @@
                         style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
                         <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
                             <div>Mua ngay</div>
+                            <div class="btn-type-1__icon">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay4">
+                            <div>Đọc ngay</div>
                             <div class="btn-type-1__icon">
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -56,16 +67,16 @@
                         <div class="short-description">{{ $product->short_description }}</div>
                     </div>
                     <!--<div class="group-btn-action">
-                                            <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
-                                                <div>Mua ngay</div>
-                                                <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg></div>
-                                            </div>
-                                            <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
-                                        </div>-->
+                                                    <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
+                                                        <div>Mua ngay</div>
+                                                        <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
+                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg></div>
+                                                    </div>
+                                                    <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
+                                                </div>-->
                 </div>
             </div>
             <div class="description">
@@ -200,7 +211,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalContactPay3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade modalContactPay3" id="modalContactPay3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="modalContactPayLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -229,6 +240,51 @@
                             <button type="submit" class="btn-custom btn-type-1">
 
                                 <div>Tải xuống</div>
+                                <div class="btn-type-1__icon"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6L12 18M12 18L8 14M12 18L16 14" stroke="white" stroke-width="1.6"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg></div>
+                                <div class="spinner-border" style="display: none;width:30px;height:30px;" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modalContactPay3" id="modalContactPay4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalContactPayLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form action="{{ route('product-payment.download') }}" class="modal-form" id="formPay4">
+                        <input type="hidden" id="code-id" name="id">
+                        <div class="close-modal btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="32" height="32" rx="16" fill="white" />
+                                <path d="M9.59961 9.6001L22.3993 22.3997" stroke="#51545F" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.60074 22.3997L22.4004 9.6001" stroke="#51545F" stroke-width="3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="form-header">
+                            <div class="title">Mã code của bạn</div>
+                        </div>
+                        <div class="position-relative">
+                            <input type="text" class="col-12 input-custom" name="code"
+                                placeholder="Mã code của bạn">
+                        </div>
+                        <div class="group-btn-action form-footer">
+                            <button type="submit" class="btn-custom btn-type-1">
+
+                                <div>Đọc ebook</div>
                                 <div class="btn-type-1__icon"><svg width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 6L12 18M12 18L8 14M12 18L16 14" stroke="white" stroke-width="1.6"

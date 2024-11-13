@@ -93,6 +93,7 @@ a {
   border: 2px solid rgba(255, 255, 255, 0.3);
   padding: 8px 18px;
   height: 56px;
+  text-wrap: nowrap;
 }
 
 .btn-type-1 {

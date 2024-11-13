@@ -63,6 +63,7 @@
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
+  margin: auto;
 }
 
 .main .product .content .group-info-product .banner__image .banner_bg {
@@ -133,6 +134,13 @@
   width: 100%;
   display: flex;
   gap: 17px;
+}
+
+.main .product .content .group-info-product .group-btn-action {
+  width: 100%;
+  display: flex;
+  gap: 17px;
+  justify-content: center;
 }
 
 .main .product .content .description {

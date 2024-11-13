@@ -1,26 +1,26 @@
-#modalContactPay3 .modal-dialog {
+.modalContactPay3 .modal-dialog {
   max-width: 572px;
 }
-#modalContactPay3 .modal-dialog .modal-content {
+.modalContactPay3 .modal-dialog .modal-content {
   border-radius: 12px;
   background: #050505;
 }
-#modalContactPay3 .modal-dialog .modal-content .modal-body {
+.modalContactPay3 .modal-dialog .modal-content .modal-body {
   padding: 32px;
 }
-#modalContactPay3 .modal-form {
+.modalContactPay3 .modal-form {
   display: flex;
   flex-direction: column;
   gap: 23px;
   position: relative;
 }
-#modalContactPay3 .modal-form .close-modal {
+.modalContactPay3 .modal-form .close-modal {
   position: absolute;
   right: 0px;
   top: 0px;
   cursor: pointer;
 }
-#modalContactPay3 .modal-form .form-header {
+.modalContactPay3 .modal-form .form-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +28,7 @@
   gap: 8px;
   align-self: stretch;
 }
-#modalContactPay3 .modal-form .form-header .title {
+.modalContactPay3 .modal-form .form-header .title {
   color: #FFF;
   font-family: "SF Pro Display";
   font-size: 24px;
@@ -37,7 +37,7 @@
   line-height: 34px;
   /* 141.667% */
 }
-#modalContactPay3 .modal-form .form-header .sub-title {
+.modalContactPay3 .modal-form .form-header .sub-title {
   color: var(--Neutre-600, #6B767F);
   font-family: "SF Pro Display";
   font-size: 16px;
@@ -47,13 +47,13 @@
   /* 150% */
   letter-spacing: -0.176px;
 }
-#modalContactPay3 .modal-form .group-btn-action {
+.modalContactPay3 .modal-form .group-btn-action {
   display: flex;
   align-items: center;
   justify-content: right;
   gap: 17px;
 }
-#modalContactPay3 .modal-form .notify {
+.modalContactPay3 .modal-form .notify {
   color: var(--Neutre-600, #6B767F);
   /* Body/Regular/L */
   font-family: "SF Pro Display";

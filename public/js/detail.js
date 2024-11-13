@@ -188,8 +188,6 @@ $(document).ready(function () {
                         $("#formPay3")[0].reset();
 
                         $("#formPay3").validate().resetForm();
-
-                        alert('Tải thành công')
                     },
                     error: function (error) {
                         $('#modalContactPay3 .btn-custom .spinner-border').hide();
@@ -210,7 +208,7 @@ $(document).ready(function () {
 
                             showErrorResponse3(listError);
                         }
-                        
+
                         if (error.status == 302 && error.responseJSON && error.responseJSON.link_redirect) {
                             location.href = error.responseJSON.link_redirect
                             return
@@ -251,4 +249,104 @@ $(document).ready(function () {
 
         $('#modalContactPay3').modal('show');
     })
+
+
+    const optionConfigValidate3 = {
+        debug: false,
+        rules: {
+            code: {
+                required: true,
+            }
+        },
+        messages: {
+            code: {
+                required: "Không được để trống",
+            }
+        },
+        errorElement: 'span',
+        errorClass: 'form-input-error',
+        submitHandler: function (form) {
+            let formData = new FormData(form);
+
+            if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
+                $.ajax({
+                    url: form.action,
+                    data: formData,
+                    method: 'POST',
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function () {
+                        $('#modalContactPay4 .btn-custom .spinner-border').show();
+
+                        $('#modalContactPay4 .btn-custom .btn-type-1__icon').hide();
+                    },
+                    success: function (data) {
+                        $('#modalContactPay4 .btn-custom .spinner-border').hide();
+
+                        $('#modalContactPay4 .btn-custom .btn-type-1__icon').show();
+
+                        $('#modalContactPay4').modal('hide');
+                        window.open(data.link_redirect, "_blank");
+
+                        $('#formPay4').modal('hide');
+
+                        $("#formPay4")[0].reset();
+
+                        $("#formPay4").validate().resetForm();
+                    },
+                    error: function (error) {
+                        $('#modalContactPay4 .btn-custom .spinner-border').hide();
+
+                        $('#modalContactPay4 .btn-custom .btn-type-1__icon').show();
+                        if (error.status === 404) {
+                            const listError = {
+                                code: ['Mã code không hợp lệ']
+                            };
+
+                            showErrorResponse4(listError);
+
+                            return;
+                        }
+
+                        if (error.status === 422) {
+                            const listError = error.responseJSON.errors;
+
+                            showErrorResponse4(listError);
+                        }
+
+                        if (error.status == 302 && error.responseJSON && error.responseJSON.link_redirect) {
+                            location.href = error.responseJSON.link_redirect
+                            return
+                        }
+
+                        if (error.status == 400 && error.responseJSON && error.responseJSON.message) {
+                            alert('Không thành công')
+
+                            return
+                        }
+
+                        alert('Không thành công')
+                    }
+                });
+            }
+
+        }
+    };
+
+    const showErrorResponse4 = (listError) => {
+        var errors = {};
+
+        for (var key in listError) {
+            if (listError.hasOwnProperty(key)) {
+                if (Array.isArray(listError[key])) {
+                    errors[key] = listError[key][0];
+                }
+            }
+        }
+
+        $("#formPay4").validate().showErrors(errors);
+    }
+
+    $('#formPay4').validate(optionConfigValidate3);
 });

@@ -1,6 +1,6 @@
 @extends('layouts.app-2')
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/shop.css') }}?v={{ filemtime(public_path('css/shop.css')) }}">
 @endpush
 @section('title', 'Danh sách sản phẩm')
 @section('content')
