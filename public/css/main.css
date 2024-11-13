@@ -3,9 +3,10 @@
 .main {
   max-width: 100%;
   padding: 0px;
-  background: radial-gradient(ellipse 50% 4% at top, rgba(182, 129, 255, 0.2509803922), transparent), radial-gradient(ellipse 60% 4% at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
+  background: radial-gradient(ellipse 50% 100px at top, rgba(182, 129, 255, 0.2509803922), transparent), radial-gradient(ellipse 60% 100px at bottom, rgba(182, 129, 255, 0.1803921569), transparent), #0D0C14;
   position: relative;
   padding: 0px 120px;
+  min-height: 100vh;
 }
 
 .main .banner-group .banner-group__item {
