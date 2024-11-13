@@ -28,8 +28,8 @@ class ProductPaymentDownloadRequest extends FormRequest
                 'string',
             ],
             'id' => [
-                'required',
-                'string',
+                // 'required',
+                // 'string',
             ],
         ];
     }

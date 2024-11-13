@@ -22,7 +22,7 @@ Route::get('/products', [App\Http\Controllers\ProductController::class, 'index']
 
 Route::get('/products/{id}',  [App\Http\Controllers\ProductController::class, 'show'])->name('products.detail');
 
-Route::get('/products/{code}/read-book',  [App\Http\Controllers\ProductPaymentController::class, 'readBook'])->name('products.read-book');
+Route::get('/ebooks/{code}',  [App\Http\Controllers\ProductPaymentController::class, 'readBook'])->name('products.read-book');
 
 Route::get('/products/{code}/get-book',  [App\Http\Controllers\ProductPaymentController::class, 'getBook'])->name('products.get-book');
 

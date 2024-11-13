@@ -194,8 +194,15 @@ a {
 .form-input-error {
   color: #D7002B;
 }
-.mw-50p{
+
+.mw-50p {
   max-width: 50%;
+}
+
+span.form-input-error {
+  position: absolute;
+  left: 0px;
+  top: 100%;
 }
 
 @media only screen and (max-width: 1139px) {

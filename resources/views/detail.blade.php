@@ -29,7 +29,7 @@
                 <div>
                     <div class="banner__image">
                         <div class="banner_bg"></div>
-                        <img src="{{ asset('images/book-ai.png') }}" alt="">
+                        <img src="{{ $product->image_link }}" alt="">
                     </div>
                     <div class="group-btn-action"
                         style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
@@ -98,21 +98,21 @@
                             <div class="title">Thông tin của bạn</div>
                             <div class="sub-title">Nhập thông tin của bạn để nhận được mã code</div>
                         </div>
-                        <div>
+                        <div class="position-relative">
                             <input type="text" class="col-12 input-custom" name="user_name"
                                 placeholder="Tên của bạn">
 
                         </div>
-                        <div>
+                        <div class="position-relative">
                             <input type="text" class="col-12 input-custom" name="email"
                                 placeholder="Email của bạn">
 
                         </div>
-                        <div>
+                        <div class="position-relative">
                             <input type="text" class="col-12 input-custom" name="phone"
                                 placeholder="Số điện thoại của bạn">
                         </div>
-                        <div>
+                        <div class="position-relative">
                             <input type="text" class="col-12 input-custom" name="voucher_code"
                                 placeholder="Mã giảm giá">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -221,7 +221,7 @@
                             <div class="title">Mã code của bạn</div>
                             <div class="sub-title">Mã code được gửi tới email <span id="email-send-code"></span></div>
                         </div>
-                        <div>
+                        <div class="position-relative">
                             <input type="text" class="col-12 input-custom" name="code"
                                 placeholder="Mã code của bạn">
                         </div>
