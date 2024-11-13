@@ -104,9 +104,9 @@ class ProductPaymentController extends Controller
         if (Cache::has('book_cache_' . $data['code']) === false) {
             $sessionId = (string) Str::uuid();
 
-            Cache::put('book_cache_' . $data['code'], $sessionId, 84600);
+            Cache::put('book_cache_' . $data['code'], $sessionId, 300);
 
-            Cache::put('book_session_cache_' . $sessionId, $productPayment, 84600);
+            Cache::put('book_session_cache_' . $sessionId, $productPayment, 300);
         } else {
             $sessionId = Cache::get('book_cache_' . $data['code']);
         }
