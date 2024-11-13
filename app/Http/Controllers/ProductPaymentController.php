@@ -11,9 +11,11 @@ use App\Models\ProductPayment;
 use App\Models\Voucher;
 use App\Repositories\ProductRepository;
 use App\Services\Payment\PaymentService;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Response;
+use Str;
 
 class ProductPaymentController extends Controller
 {
@@ -99,17 +101,26 @@ class ProductPaymentController extends Controller
             return response()->json(['error' => 'Không thể tải tệp từ URL.'], 404);
         }
 
+        if (Cache::has('book_cache_' . $data['code']) === false) {
+            $sessionId = (string) Str::uuid();
+
+            Cache::put('book_cache_' . $data['code'], $sessionId, 84600);
+
+            Cache::put('book_session_cache_' . $sessionId, $productPayment, 84600);
+        } else {
+            $sessionId = Cache::get('book_cache_' . $data['code']);
+        }
+
         return response()->json(
-            ['link_redirect' => route('products.read-book', ['code' => $data['code']])]
+            ['link_redirect' => route('products.read-book', ['code' => $sessionId])]
         );
     }
 
     public function readBook($code)
     {
-        $productPayment = ProductPayment::where('status', Status::SUCCESS)
-            ->where('download_code', $code)->first();
+        $productPayment = Cache::get('book_session_cache_' . $code);
 
-        if ($productPayment === null || $productPayment->product === null) {
+        if ($productPayment === null) {
             abort(404);
         }
 
@@ -124,8 +135,7 @@ class ProductPaymentController extends Controller
 
     public function getBook($code)
     {
-        $productPayment = ProductPayment::where('status', Status::SUCCESS)
-            ->where('download_code', $code)->first();
+        $productPayment = Cache::get('book_session_cache_' . $code);
 
         $filePath = $this->productRepository->getProductFilePath($productPayment->product->download_url);
 
