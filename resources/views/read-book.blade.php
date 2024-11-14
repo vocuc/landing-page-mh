@@ -23,7 +23,7 @@
 
         if (after - before > 100) { // Kiểm tra nếu thời gian trễ lớn hơn 100ms
             alert("DevTools đang mở. Hãy đóng nó lại!");
-            window.location.href = "https://example.com"; // Chuyển hướng hoặc làm gì đó
+            window.location.href = "/"; // Chuyển hướng hoặc làm gì đó
         }
     }
 
