@@ -167,16 +167,44 @@
   /* 150% */
 }
 
-@media only screen and (max-width: 576px) {
 
-  .group-btn-action .btn-type-1 {
-    width: calc(70% - 17px) !important;
-  }
+.main .product .content .group-info-product .group-price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 40px;
+}
 
-  .group-btn-action .btn-type-2 {
-    width: calc(40% - 17px) !important;
-  }
+.main .product .content .group-info-product .group-price .price-original {
+  color: var(--Neutral-Grey-400, #A5A5A5);
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.608px;
+  /* 97.551% */
+  text-decoration: line-through;
+}
 
+.main .product .content .group-info-product .group-price .divier {
+  width: 1px;
+  height: 8px;
+  border-radius: 7px;
+  background: #D9D9D9;
+}
+
+.main .product .content .group-info-product .group-price .price-discount {
+  font-family: "SF Pro Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 15.608px;
+  /* 97.551% */
+  background: var(--Linear, linear-gradient(180deg, #FEF1FD 0%, #FA97FF 38%, #6F48FD 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media only screen and (max-width: 1139px) {
@@ -211,5 +239,36 @@
 
   .footer-copyright__left .terms {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .group-btn-action .btn-type-1 {
+    width: calc(70% - 17px) !important;
+  }
+
+  .group-btn-action .btn-type-2 {
+    width: calc(40% - 17px) !important;
+  }
+
+  .main .product .content .group-info-product {
+    gap: 0px;
+  }
+
+  .main .product .content {
+    margin-top: 22px !important;
+  }
+
+  .main .product .content .description {
+    margin-top: 20px;
+  }
+
+  .main .product {
+    margin-top: 0px !important;
+  }
+
+  .footer {
+    margin-top: 42px;
   }
 }

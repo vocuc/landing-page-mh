@@ -21,16 +21,36 @@
             </a>
 
             <!--<div class="title">
-                                            Chi tiết tài nguyên
-                                        </div>-->
+                                                                Chi tiết tài nguyên
+                                                            </div>-->
         </div>
         <div class="content w-963 m-auto">
             <div class="group-info-product">
+                @if (is_mobile())
+                    <div class="group-info-content">
+                        <div class="tags">
+                            <div class="tag">Ebook</div>
+                        </div>
+                        <div class="group-title">
+                            <h1 class="name-product">{{ $product->name }}</h1>
+                        </div>
+                    </div>
+                @endif
+
                 <div>
                     <div class="banner__image">
                         <div class="banner_bg"></div>
                         <img src="{{ $product->image_link }}" alt="">
                     </div>
+                    <div class="group-price">
+                        @if (!empty($product->original_price))
+                            <div class="price-original">{{ number_format($product->original_price, 0, '.', '.') }}
+                            </div>
+                            <div class="divier"></div>
+                        @endif
+                        <div class="price-discount">{{ number_format($product->price, 0, '.', '.') }}</div>
+                    </div>
+
                     <div class="group-btn-action"
                         style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
                         <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
@@ -57,27 +77,32 @@
                         <!--<div class="btn-custom btn-type-2">Liên hệ tư vấn</div>-->
                     </div>
                 </div>
-
                 <div class="group-info-content">
-                    <div class="tags">
-                        <div class="tag">Ebook</div>
-                    </div>
+                    @if (!is_mobile())
+                        <div class="tags">
+                            <div class="tag">Ebook</div>
+                        </div>
+                    @endif
+
                     <div class="group-title">
-                        <h1 class="name-product">{{ $product->name }}</h1>
+                        @if (!is_mobile())
+                            <h1 class="name-product">{{ $product->name }}</h1>
+                        @endif
                         <div class="short-description">{{ $product->short_description }}</div>
                     </div>
                     <!--<div class="group-btn-action">
-                                                    <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
-                                                        <div>Mua ngay</div>
-                                                        <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
-                                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                            </svg></div>
-                                                    </div>
-                                                    <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
-                                                </div>-->
+                                                                        <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
+                                                                            <div>Mua ngay</div>
+                                                                            <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
+                                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                                                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                                                </svg></div>
+                                                                        </div>
+                                                                        <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
+                                                                    </div>-->
                 </div>
+
             </div>
             <div class="description">
                 <h2>Giới thiệu nội dung</h2>
@@ -211,8 +236,8 @@
             </div>
         </div>
     </div>
-    <div class="modal fade modalContactPay3" id="modalContactPay3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="modalContactPayLabel" aria-hidden="true">
+    <div class="modal fade modalContactPay3" id="modalContactPay3" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="modalContactPayLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -257,8 +282,8 @@
             </div>
         </div>
     </div>
-    <div class="modal fade modalContactPay3" id="modalContactPay4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="modalContactPayLabel" aria-hidden="true">
+    <div class="modal fade modalContactPay3" id="modalContactPay4" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="modalContactPayLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
