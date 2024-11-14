@@ -124,13 +124,7 @@ class ProductPaymentController extends Controller
             abort(404);
         }
 
-        $response = Http::get($productPayment->product->download_url);
-
-        if (!$response->successful()) {
-            abort(404);
-        }
-
-        return view('read-book', compact('code'));
+        return view('read-book', ["url" => $productPayment->product->download_url]);
     }
 
     public function getBook($code)
