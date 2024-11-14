@@ -1,2 +1,2 @@
-<iframe src="data:application/pdf;base64,{{ base64_encode('https://heyzine.com/flip-book/594f97a8c7.html') }}"
-    height="100%" width="100%"></iframe>
+<iframe allowfullscreen="" style="width: 100vw; height: 100vh;position: fixed;top: 0px;left: 0px;background: #0D0C14;"
+    src="{{$url}}"></iframe>
