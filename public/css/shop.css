@@ -151,6 +151,6 @@
 
 @media only screen and (max-width: 480px) {
   .main .products .content .product-item {
-    width: calc(50% - 47px)
+    width: calc(50% - 48px)
   }
 }
