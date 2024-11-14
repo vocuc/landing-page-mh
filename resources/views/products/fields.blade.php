@@ -48,12 +48,10 @@
 
 <!-- Download Url Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('download_url', 'File Upload:') !!}
-    @if (@$product->download_url)
-        <p>Current file: {{ @$product->download_url }}</p>
-    @endif
-    {!! Form::file('download_url', ['class' => 'form-control']) !!}
+    {!! Form::label('download_url', 'Download Url:') !!}
+    {!! Form::text('download_url', null, ['class' => 'form-control', 'required', 'maxlength' => 500, 'maxlength' => 500]) !!}
 </div>
+
 <link rel="stylesheet" href="{{ asset('css/ckeditor5.css') }}" />
 <script src="{{ asset('js/ckeditor5.umd.js') }}"></script>
 

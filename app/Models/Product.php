@@ -37,7 +37,7 @@ class Product extends Model
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
         'image_link' => 'required|string|max:500|url',
-        'download_url' => 'required|file',
+        'download_url' => 'required|string|max:500|url'
     ];
 
     

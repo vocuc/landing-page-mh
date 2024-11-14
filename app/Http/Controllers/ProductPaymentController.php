@@ -95,9 +95,9 @@ class ProductPaymentController extends Controller
             abort(404);
         }
 
-        $filePath = $this->productRepository->getProductFilePath($productPayment->product->download_url);
+        $response = Http::get($productPayment->product->download_url);
 
-        if (!File::exists($filePath)) {
+        if (!$response->successful()) {
             return response()->json(['error' => 'Không thể tải tệp từ URL.'], 404);
         }
 
@@ -124,9 +124,9 @@ class ProductPaymentController extends Controller
             abort(404);
         }
 
-        $filePath = $this->productRepository->getProductFilePath($productPayment->product->download_url);
+        $response = Http::get($productPayment->product->download_url);
 
-        if (!File::exists($filePath)) {
+        if (!$response->successful()) {
             abort(404);
         }
 
@@ -137,12 +137,16 @@ class ProductPaymentController extends Controller
     {
         $productPayment = Cache::get('book_session_cache_' . $code);
 
-        $filePath = $this->productRepository->getProductFilePath($productPayment->product->download_url);
+        $response = Http::get($productPayment->product->download_url);
 
-        if (!File::exists($filePath)) {
+        if (!$response->successful()) {
             abort(404);
         }
 
-        return response()->file($filePath);
+        $filename = basename(parse_url($productPayment->product->download_url, PHP_URL_PATH));
+
+        return response($response->body(), 200, [
+            'Content-Type' => $response->header('Content-Type')
+        ]);
     }
 }
