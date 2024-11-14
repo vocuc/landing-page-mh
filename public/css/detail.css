@@ -173,13 +173,13 @@
   align-items: center;
   gap: 4px;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .main .product .content .group-info-product .group-price .price-original {
   color: var(--Neutral-Grey-400, #A5A5A5);
   font-family: "SF Pro Display";
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 15.608px;
@@ -196,7 +196,7 @@
 
 .main .product .content .group-info-product .group-price .price-discount {
   font-family: "SF Pro Display";
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 15.608px;
@@ -244,11 +244,11 @@
 
 @media only screen and (max-width: 576px) {
 
-  .group-btn-action .btn-type-1 {
-    width: calc(70% - 17px) !important;
+  .group-btn-action.btn-footer .btn-type-1 {
+    width: calc(46% - 17px) !important;
   }
 
-  .group-btn-action .btn-type-2 {
+  .group-btn-action.btn-footer .btn-type-2 {
     width: calc(40% - 17px) !important;
   }
 

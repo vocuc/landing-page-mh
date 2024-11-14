@@ -21,15 +21,15 @@
             </a>
 
             <!--<div class="title">
-                                                                Chi tiết tài nguyên
-                                                            </div>-->
+                                                                    Chi tiết tài nguyên
+                                                                </div>-->
         </div>
         <div class="content w-963 m-auto">
             <div class="group-info-product">
                 @if (is_mobile())
                     <div class="group-info-content">
                         <div class="tags">
-                            <div class="tag">Ebook</div>
+                            <div class="tag">Digital Book</div>
                         </div>
                         <div class="group-title">
                             <h1 class="name-product">{{ $product->name }}</h1>
@@ -80,7 +80,7 @@
                 <div class="group-info-content">
                     @if (!is_mobile())
                         <div class="tags">
-                            <div class="tag">Ebook</div>
+                            <div class="tag">Digital Book</div>
                         </div>
                     @endif
 
@@ -91,16 +91,16 @@
                         <div class="short-description">{{ $product->short_description }}</div>
                     </div>
                     <!--<div class="group-btn-action">
-                                                                        <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
-                                                                            <div>Mua ngay</div>
-                                                                            <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
-                                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
-                                                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                                                </svg></div>
-                                                                        </div>
-                                                                        <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
-                                                                    </div>-->
+                                                                            <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
+                                                                                <div>Mua ngay</div>
+                                                                                <div class="btn-type-1__icon"><svg width="24" height="25" viewBox="0 0 24 25"
+                                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                                                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                                                    </svg></div>
+                                                                            </div>
+                                                                            <div class="btn-custom btn-type-2">Liên hệ tư vấn</div>
+                                                                        </div>-->
                 </div>
 
             </div>
@@ -112,7 +112,18 @@
             </div>
         </div>
     </section>
-
+    <div class="group-btn-action btn-footer" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <div class="btn-custom btn-type-1" data-bs-toggle="modal" data-bs-target="#modalContactPay1">
+            <div>Mua ngay</div>
+            <div class="btn-type-1__icon">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12.5H18M18 12.5L14 16.5M18 12.5L14 8.5" stroke="white" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+        <!--<div class="btn-custom btn-type-2">Liên hệ tư vấn</div>-->
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="modalContactPay1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
         aria-labelledby="modalContactPayLabel" aria-hidden="true">
