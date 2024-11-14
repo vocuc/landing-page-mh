@@ -43,12 +43,13 @@
                         <img src="{{ $product->image_link }}" alt="">
                     </div>
                     <div class="group-price">
+                        <div>Giá: </div>
                         @if (!empty($product->original_price))
-                            <div class="price-original">{{ number_format($product->original_price, 0, '.', '.') }}
+                            <div class="price-original">{{ number_format($product->original_price, 0, '.', '.') }}đ
                             </div>
                             <div class="divier"></div>
                         @endif
-                        <div class="price-discount">{{ number_format($product->price, 0, '.', '.') }}</div>
+                        <div class="price-discount">{{ number_format($product->price, 0, '.', '.') }}đ</div>
                     </div>
 
                     <div class="group-btn-action"
