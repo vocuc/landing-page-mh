@@ -1,14 +1,18 @@
+{!! $content !!}
 <script>
     document.addEventListener('keydown', function(event) {
+        let key = event.key.toLowerCase() 
+
+        if (event.ctrlKey && key === 'u') {
+            event.preventDefault();
+        }
+        if (event.ctrlKey && event.shiftKey && (key === 'j' || key === 'i' || key === 'c')) {
+            event.preventDefault();
+        }
         
-        if (event.ctrlKey && event.key.toLowerCase() === 'u') {
+        if (key === 'f12') {
             event.preventDefault();
-        }
-        if (event.ctrlKey && event.shiftKey && (event.key.toLowerCase() === 'j' || event.key.toLowerCase() === 'i')) {
-            event.preventDefault();
-        }
-        if (event.key === 'F12') {
-            event.preventDefault();
+
         }
     });
 
@@ -28,5 +32,23 @@
     }
 
     setInterval(detectDevTools, 1000);
+
+    function initIframe() {
+    const iframe = document.querySelector('iframe');
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+    // Ngăn chuột phải trong iframe
+    iframeDoc.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+    });
+
+    // Ngăn các phím tắt trong iframe
+    iframeDoc.addEventListener("keydown", function(event) {
+        if (event.ctrlKey && event.key.toLowerCase() === 'u' || 
+            event.ctrlKey && event.shiftKey && (event.key.toLowerCase() === 'j' || event.key.toLowerCase() === 'i') || 
+            event.key === 'F12') {
+            event.preventDefault();
+        }
+    });
+}
 </script>
-<iframe src="data:text/html;base64,{{ $base64Content }}" height="100%" width="100%"></iframe>

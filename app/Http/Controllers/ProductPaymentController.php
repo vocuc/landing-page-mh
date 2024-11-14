@@ -129,9 +129,7 @@ class ProductPaymentController extends Controller
             abort(404);
         }
         
-        $base64Content = base64_encode($response->body());
-
-        return view('read-book', ["base64Content" => $base64Content]);
+        return view('read-book', ["content" => $response->body()]);
     }
 
     public function getBook($code)
