@@ -123,8 +123,15 @@ class ProductPaymentController extends Controller
         if ($productPayment === null) {
             abort(404);
         }
+        $response = Http::get($productPayment->product->download_url);
 
-        return view('read-book', ["url" => $productPayment->product->download_url]);
+        if (!$response->successful()) {
+            abort(404);
+        }
+        
+        $base64Content = base64_encode($response->body());
+
+        return view('read-book', ["base64Content" => $base64Content]);
     }
 
     public function getBook($code)
