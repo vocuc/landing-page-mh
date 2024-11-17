@@ -274,6 +274,10 @@ span.form-input-error {
   width: 100%;
 }
 
+.f-w-12px {
+  width: calc(50% - 12px);
+}
+
 @media only screen and (max-width: 1139px) {
   .main .contact .title .title__group--sologan .line-title {
     width: 100%;
