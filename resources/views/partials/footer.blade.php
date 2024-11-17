@@ -3,18 +3,23 @@
         <div class="footer-copyright__right">© 2024 ThienNhaiTianya. All Rights Reserved.</div>
         <div class="footer-copyright__left">
             <div>
-    <a href="https://thiennhai.com/privacy-policy" target="_blank">Privacy Policy</a>
-</div>
+                <a href="https://thiennhai.com/privacy-policy" target="_blank">Privacy Policy</a>
+            </div>
+            <div>
+                <a href="https://thiennhai.com/suports" target="_blank">Suport</a>
+            </div>
             <div class="terms">Terms of Service</div>
         </div>
-		<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TWPQKQWLM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TWPQKQWLM"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-0TWPQKQWLM');
-</script>
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-0TWPQKQWLM');
+        </script>
     </div>
 </footer>
