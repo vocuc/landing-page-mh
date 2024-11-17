@@ -6,7 +6,7 @@
                 <a href="https://thiennhai.com/privacy-policy" target="_blank">Privacy Policy</a>
             </div>
             <div>
-                <a href="https://thiennhai.com/suports" target="_blank">Suport</a>
+                <a href="https://thiennhai.com/suports" target="_blank">Liên Hệ</a>
             </div>
             <div class="terms">Terms of Service</div>
         </div>
