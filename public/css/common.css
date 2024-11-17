@@ -275,6 +275,41 @@ span.form-input-error {
 }
 
 @media only screen and (max-width: 1139px) {
+  .main .contact .title .title__group--sologan .line-title {
+    width: 100%;
+
+  }
+
+  .main .contact .title {
+    margin-top: 0px;
+  }
+
+  .main .contact .title .title__group--sologan .title__group--sologan-content {
+    color: #FFF;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+  }
+
+  .main .contact .title .title__group--sologan .title__group--sologan-sub-content {
+    color: #969696;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .main .contact .contact-form .form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1139px) {
   .btn-custom {
     font-size: 11.429px;
   }
