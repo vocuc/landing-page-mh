@@ -44,3 +44,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 Route::get('/privacy-policy', function () {
     return view('privacy');
 });
+
+Route::get('/suports', function () {
+    return view('suport');
+});
