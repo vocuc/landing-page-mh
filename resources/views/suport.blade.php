@@ -6,7 +6,7 @@
 @endpush
 @section('title', 'Chính Sách Bảo Mật')
 @section('content')
-<section class="contact" style="padding-top: 40px;">
+<section class="contact" style="padding-top: 60px;">
     <div class="title">
         <div class="title__group--sologan mw-1220 m-auto">
             <h2 class="title__group--sologan-content">
