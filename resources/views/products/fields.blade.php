@@ -52,6 +52,21 @@
     {!! Form::text('download_url', null, ['class' => 'form-control', 'required', 'maxlength' => 500, 'maxlength' => 500]) !!}
 </div>
 
+<!-- Type Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('is_hot', 'Sản phẩm hot:') !!}
+    {!! Form::select('is_hot', [0 => 'Inactive', 1 => 'Active'], 
+        isset($product) ? $product->is_hot : null
+        , ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('is_active_voucher', 'Active Voucher:') !!}
+    {!! Form::select('is_active_voucher', [0 => 'Inactive', 1 => 'Active'], 
+        isset($product) ? $product->is_active_voucher : null
+        , ['class' => 'form-control']) !!}
+</div>
+
 <link rel="stylesheet" href="{{ asset('css/ckeditor5.css') }}" />
 <script src="{{ asset('js/ckeditor5.umd.js') }}"></script>
 

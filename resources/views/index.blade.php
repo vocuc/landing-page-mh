@@ -45,7 +45,11 @@
             <div class="banner__left">
                 <div class="banner__image">
                     <div class="banner_bg"></div>
+                    @if(empty($product))
                     <img src="{{ asset('images/book-ai.png') }}" alt="">
+                    @else
+                    <img src="{{ $product->image_link }}" alt="">
+                    @endif
                 </div>
             </div>
         </div>

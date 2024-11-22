@@ -54,7 +54,7 @@ class ProductPaymentController extends Controller
 
         $productPayment = ProductPayment::create([
             'user_name' => $data['user_name'],
-            'email' => $data['email'],
+            'email' => strtolower($data['email']),
             'phone' => $data['phone'],
             'discount_price' => $data['discount_price'],
             'price' => $productPrice,

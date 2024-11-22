@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $product = Product::where("is_hot", 1)->first();
+    return view('index', ['product' => $product]);
 })->name('home-page');
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
@@ -47,4 +49,4 @@ Route::get('/privacy-policy', function () {
 
 Route::get('/suports', function () {
     return view('suport');
-});
+})->name('suport');

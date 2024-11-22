@@ -1,26 +1,110 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Product Payments</h1>
-                </div>
-               
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Product Payments</h1>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <div class="content px-3">
+<div class="content px-3">
 
-        @include('flash::message')
+    @include('flash::message')
 
-        <div class="clearfix"></div>
-
-        <div class="card">
-            @include('product_payments.table')
+    <div class="clearfix"></div>
+    <div class="col-sm-12 col-md-6" style="margin-bottom: 20px;">
+        <div class="dt-buttons btn-group flex-wrap">
+            <button id="all" class="filter-day btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
+                <span>Tất cả</span>
+            </button>
+            <button id="7day" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
+                <span>7 ngày qua</span>
+            </button>
+            <button id="30day" class="filter-day btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button">
+                <span>30 ngày</span>
+            </button>
+            <div class="btn-group" style="margin-left: 20px;">
+                <select class="form-control page-size">
+                    <option value="10">Hiển thị 10/page</option>
+                    <option value="50">Hiển thị 50/page</option>
+                    <option value="100">Hiển thị 100/page</option>
+                </select>
+            </div>
         </div>
     </div>
+    <div class="card">
+        @include('product_payments.table')
+    </div>
+</div>
+<style>
+    .btn-secondary.active {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+</style>
 
+<script>
+    // Lấy tất cả các nút có class "filter-day"
+    const buttons = document.querySelectorAll('.filter-day');
+    const currentUrl = new URL(window.location.href);
+    const currentdate = currentUrl.searchParams.get('d');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Lấy ID của nút được nhấn
+            const id = this.id;
+
+            // Lấy URL hiện tại
+            const currentUrl = new URL(window.location.href);
+
+            // Lấy các tham số hiện tại
+            const params = currentUrl.searchParams;
+
+            // Cập nhật hoặc thêm tham số 'filter'
+            params.set('d', id);
+
+            // Cập nhật URL với tham số mới
+            currentUrl.search = params.toString();
+
+            // Điều hướng đến URL mới
+            window.location.href = currentUrl.toString();
+        });
+
+        if (button.id === currentdate) {
+            button.classList.remove('active');
+            button.classList.add('active'); // Thêm class 'active' cho nút
+        }
+    });
+
+    // Lấy phần tử <select>
+    const selectElement = document.querySelector('.page-size');
+    const perPageValue = currentUrl.searchParams.get('per_page');
+
+    if (perPageValue) {
+        const optionToSelect = selectElement.querySelector(`option[value="${perPageValue}"]`);
+        if (optionToSelect) {
+            optionToSelect.selected = true; // Đặt tùy chọn là selected
+        }
+    }
+
+    // Thêm sự kiện thay đổi (change) cho <select>
+    selectElement.addEventListener('change', function() {
+        // Lấy giá trị được chọn
+        const selectedValue = this.value;
+
+        // Lấy URL hiện tại
+        const currentUrl = new URL(window.location.href);
+
+        // Thêm hoặc cập nhật tham số 'itemsPerPage'
+        currentUrl.searchParams.set('per_page', selectedValue);
+
+        // Điều hướng đến URL mới
+        window.location.href = currentUrl.toString();
+    });
+</script>
 @endsection

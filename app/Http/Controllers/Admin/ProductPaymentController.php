@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProductPaymentRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\ProductPaymentRepository;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Flash;
 
 class ProductPaymentController extends AppBaseController
@@ -24,7 +25,19 @@ class ProductPaymentController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $productPayments = $this->productPaymentRepository->allQuery()->orderBy('id', 'DESC')->paginate(10);
+        $query = $this->productPaymentRepository->allQuery([]);
+
+        if($request->has('d')) {
+            $dateRange = [
+                "all" => Carbon::now()->subDays(365),
+                "7day" => Carbon::now()->subDays(7),
+                "30day" => Carbon::now()->subDays(30),
+            ];
+
+            $query->where('created_at', '>=', $dateRange[$request->get('d')]);
+        }
+
+        $productPayments = $query->orderBy('id', 'DESC')->paginate($request->get('per_page', 10));
 
         return view('product_payments.index')
             ->with('productPayments', $productPayments);

@@ -22,7 +22,9 @@ class ProductPayment extends Model
         'price',
         'product_id',
         'voucher_id',
-        'discount_price'
+        'discount_price',
+        'utm_source',
+        'sent_mail_status'
     ];
 
     /**
@@ -44,5 +46,9 @@ class ProductPayment extends Model
 
     public function product() {
         return $this->belongsTo(Product::class);
+    }
+
+    public function payment() {
+        return $this->hasOne(Payment::class, "object_target_id", "id");
     }
 }

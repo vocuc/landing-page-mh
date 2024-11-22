@@ -15,7 +15,9 @@ class Product extends Model
         'price',
         'original_price',
         'download_url',
-        'image_link'
+        'image_link',
+        'is_hot',
+        'is_active_voucher'
     ];
 
     protected $casts = [
