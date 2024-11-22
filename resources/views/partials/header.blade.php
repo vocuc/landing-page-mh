@@ -31,7 +31,6 @@
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="/">Trang chủ</a></li>
         <li><a class="dropdown-item" href="{{route('products')}}">Sản phẩm</a></li>
-        <li><a class="dropdown-item" href="#">Đọc tài liệu</a></li>
         <li><a class="dropdown-item" href="{{route('suport')}}">Hỗ trợ</a></li>
       </ul>
     </div>
