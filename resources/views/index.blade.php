@@ -55,7 +55,7 @@
             </div> -->
             <section class="products mw-1220 m-auto">
     <div class="list-product-header ">
-        <h1 style="font-size: 32px;">Sản phẩm bán chạy</h1>
+        <h1 style="font-size: 32px;">Top Sale</h1>
     </div>
     <div class="content" style="margin-top: 20px;">
         @foreach ($products as $product)
