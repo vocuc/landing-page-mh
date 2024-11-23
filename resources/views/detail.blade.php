@@ -212,7 +212,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <form action="" class="modal-form">
-                    <div class="close-modal btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <div class="close-modal btn-close btn-close-qr" data-bs-dismiss="modal" aria-label="Close">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <rect width="32" height="32" rx="16" fill="white" />
@@ -379,8 +379,14 @@
 <script src="{{ asset('js/detail.js') }}?v={{ filemtime(public_path('js/detail.js')) }}"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 <script>
+    const myModal = new bootstrap.Modal('#modalContactPay1', {});
+    $('.btn-close-qr').on('click', function () {
+        myModal.show(); // Hiển thị modal
+    });
+</script>
+<script>
     // Khởi tạo thời gian bắt đầu là 5 phút (300 giây)
-    let timeLeft = 2 * 60;
+    let timeLeft = 30;
 
     // Lấy phần tử để hiển thị đếm ngược
     const countdownElement = document.getElementById('countdown');

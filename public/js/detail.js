@@ -61,7 +61,7 @@ $(document).ready(function () {
 
                     setEmailStep3(data.email)
 
-                    $("#formPay1")[0].reset();
+                    // $("#formPay1")[0].reset();
 
                     $("#formPay1").validate().resetForm();
 
