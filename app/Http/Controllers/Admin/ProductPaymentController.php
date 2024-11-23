@@ -9,6 +9,7 @@ use App\Repositories\ProductPaymentRepository;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Flash;
+use Illuminate\Support\Facades\DB;
 
 class ProductPaymentController extends AppBaseController
 {
@@ -26,6 +27,8 @@ class ProductPaymentController extends AppBaseController
     public function index(Request $request)
     {
         $query = $this->productPaymentRepository->allQuery([]);
+        
+        $reportQuery = DB::table('product_payments');
 
         if($request->has('d')) {
             $dateRange = [
@@ -34,12 +37,47 @@ class ProductPaymentController extends AppBaseController
                 "30day" => Carbon::now()->subDays(30),
             ];
 
-            $query->where('created_at', '>=', $dateRange[$request->get('d')]);
+            if($request->get('d') == "today") {
+                $query->where('created_at', '>=', date("Y-m-d 00:00:00"));
+                $reportQuery->where('created_at', '>=', date("Y-m-d 00:00:00"));
+            } else if($request->get('d') == "yesterday") {
+                $query->where('created_at', '<', date("Y-m-d 00:00:00"));
+                $query->where('created_at', '>=', date('Y-m-d 00:00:00', strtotime('-1 day')));
+
+                $reportQuery->where('created_at', '<', date("Y-m-d 00:00:00"));
+                $reportQuery->where('created_at', '>=', date('Y-m-d 00:00:00', strtotime('-1 day')));
+            } else {
+                $query->where('created_at', '>=', $dateRange[$request->get('d')]);
+                $reportQuery->where('created_at', '>=', $dateRange[$request->get('d')]);
+            };
         }
 
         $productPayments = $query->orderBy('id', 'DESC')->paginate($request->get('per_page', 10));
 
+        
+        $report = $reportQuery->select('status', DB::raw('COUNT(*) as total_orders'), DB::raw('SUM(price) as total_revenue'))
+        ->groupBy('status')
+        ->orderBy("status", 'DESC')
+        ->get();
+
+        $dataReport = [
+            0 => [
+                'total_orders' => 0,
+                'total_revenue' => 0
+            ],
+            1 => [
+                'total_orders' => 0,
+                'total_revenue' => 0
+            ]
+        ];
+
+        foreach($report as $r) {
+            $dataReport[$r->status]["total_orders"] = $r->total_orders;
+            $dataReport[$r->status]["total_revenue"] = $r->total_revenue;
+        }
+
         return view('product_payments.index')
+            ->with('dataReport', $dataReport)
             ->with('productPayments', $productPayments);
     }
 

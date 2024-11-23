@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $product = Product::where("is_hot", 1)->first();
-    return view('index', ['product' => $product]);
+    $products = Product::where("is_hot", 1)->get();
+    return view('index', ['products' => $products]);
 })->name('home-page');
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
@@ -41,7 +41,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::resource('contact-forms', App\Http\Controllers\Admin\ContactFormController::class)->only(['index', 'show']);
 });
-
 
 Route::get('/privacy-policy', function () {
     return view('privacy');

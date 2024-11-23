@@ -10,22 +10,50 @@
         </div>
     </div>
 </section>
-
 <div class="content px-3">
+    <div class="row">
 
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <div>Tổng số đơn/Doanh thu</div>
+                    <h3>{{$dataReport[1]['total_orders']}}</h3>
+                    <h3>{{number_format($dataReport[1]['total_revenue'], 0, '.', ',')}}</h3>
+                    <p>Đã thanh toán</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <div>Tổng số đơn/Doanh thu</div>
+                    <h3>{{$dataReport[0]['total_orders']}}</h3>
+                    <h3>{{number_format($dataReport[0]['total_revenue'], 0, '.', ',')}}</h3>
+                    <p>Chưa thanh toán</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content px-3">
     @include('flash::message')
-
     <div class="clearfix"></div>
-    <div class="col-sm-12 col-md-6" style="margin-bottom: 20px;">
+    <div class="col-sm-12" style="margin-bottom: 20px;">
         <div class="dt-buttons btn-group flex-wrap">
             <button id="all" class="filter-day btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
                 <span>Tất cả</span>
+            </button>
+            <button id="today" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
+                <span>Hôm nay</span>
+            </button>
+            <button id="yesterday" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
+                <span>Hôm qua</span>
             </button>
             <button id="7day" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
                 <span>7 ngày qua</span>
             </button>
             <button id="30day" class="filter-day btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button">
-                <span>30 ngày</span>
+                <span>30 ngày qua</span>
             </button>
             <div class="btn-group" style="margin-left: 20px;">
                 <select class="form-control page-size">
