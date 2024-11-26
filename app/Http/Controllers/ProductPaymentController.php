@@ -61,6 +61,7 @@ class ProductPaymentController extends Controller
             'product_id' => $data['product_id'],
             'voucher_id' => @$data['voucher_id'],
             'status' => $data['status'],
+            'utm_source' => $request->get('utm_source')
         ]);
 
         $finalPrice = $productPayment->price - $productPayment->discount_price;

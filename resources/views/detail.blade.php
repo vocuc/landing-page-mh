@@ -173,7 +173,7 @@
                     <div class="position-relative">
                         <input type="text" class="col-12 input-custom" name="email"
                             placeholder="Email của bạn">
-
+                            <input type="text" hidden name="utm_source" value="{{request()->get('utm')}}" />
                     </div>
                     <div class="position-relative">
                         <input type="text" class="col-12 input-custom" name="phone"
@@ -226,7 +226,7 @@
                         <div class="title">Quét để thanh toán</div>
                         <div class="sub-title">Quét mã QR để thanh toán, mã để tải sẽ được gửi đến số của bạn</div>
                     </div>
-
+                
                     <div class="payment-info">
                         <div class="qr"><img src="" alt=""></div>
                         <div class="info">
