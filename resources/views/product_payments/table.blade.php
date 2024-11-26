@@ -15,6 +15,7 @@
                     <th>Voucher Id</th>
                     <!-- <th>utm source</th> -->
                     <th>Created At</th>
+                    <th>UTM</th>
                     <th colspan="3">Action</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@
                     <td>{{ $productPayment->voucher_id }}</td>
                     <!-- <td>{{ $productPayment->utm_source }}</td> -->
                     <td>{{ $productPayment->created_at }}</td>
+                    <td>{{ $productPayment->utm_source }}</td>
                     <td style="width: 120px">
                         <div class='btn-group'>
                             <a href="{{ route('product-payments.show', [$productPayment->id]) }}"
