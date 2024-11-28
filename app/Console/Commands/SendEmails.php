@@ -29,8 +29,7 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        $payments = ProductPayment::with('payment')
-        ->where("sent_mail_status", 0)
+        $payments = ProductPayment::where("sent_mail_status", 0)
         ->where("status", 0)
         ->where("created_at", "<=", date("Y-m-d H:i:s", time() - 86400))
         ->get();
