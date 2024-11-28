@@ -41,7 +41,7 @@ class SendEmails extends Command
                 continue;
             }
 
-            $ary[] = $payment->email;
+            array_push($ary, $payment->email);
 
             Mail::to($payment->email)->send(new SendMailMaketing($payment->user_name, $payment->product_id, ''));
             
