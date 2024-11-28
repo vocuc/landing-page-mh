@@ -32,11 +32,22 @@ class SendEmails extends Command
         $payments = ProductPayment::with('payment')
         ->where("sent_mail_status", 0)
         ->where("status", 0)
-        ->where("created_at", "<=", date("Y-m-d H:i:s", time() - (15 * 60)))
+        ->where("created_at", "<=", date("Y-m-d H:i:s", time() - 86400))
         ->get();
 
+        $ary = [];
+
         foreach($payments as $payment) {
-            Mail::to($payment->email)->send(new SendMailMaketing($payment->price, $payment->payment->payment_code));
+            if(in_array($payment->email, $ary)) {
+                continue;
+            }
+
+            $ary[] = $payment->email;
+
+            Mail::to($payment->email)->send(new SendMailMaketing($payment->user_name, $payment->product_id, ''));
+            
+            $payment->sent_mail_status = 1;
+            $payment->save();
         }
     }
 }
