@@ -33,7 +33,7 @@ class SendMailMaketing extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Hoàn thành đơn hàng'
+            subject: 'Thiên Nhai Tianya'
         );
     }
 
