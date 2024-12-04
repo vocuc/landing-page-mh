@@ -41,6 +41,9 @@ class SendEmails extends Command
         $ary = [];
 
         foreach($payments as $payment) {
+            $payment->sent_mail_status = 1;
+            $payment->save();
+            
             if(in_array($payment->email, $ary) || in_array($payment->email, $userPayments)) {
                 continue;
             }
@@ -49,9 +52,6 @@ class SendEmails extends Command
 
             Mail::to($payment->email)
             ->send(new SendMailMaketing($payment->user_name, $payment->product_id, ''));
-    
-            $payment->sent_mail_status = 1;
-            $payment->save();
         }
     }
 }
