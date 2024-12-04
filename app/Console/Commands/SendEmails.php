@@ -34,10 +34,14 @@ class SendEmails extends Command
         ->where("created_at", "<=", date("Y-m-d H:i:s", time() - 86400))
         ->get();
 
+        $userPayments = ProductPayment::where("status", 1)
+        ->where("created_at", ">", date("Y-m-d H:i:s", time() - 86400))
+        ->pluck('email')->toArray();
+
         $ary = [];
 
         foreach($payments as $payment) {
-            if(in_array($payment->email, $ary)) {
+            if(in_array($payment->email, $ary) || in_array($payment->email, $userPayments)) {
                 continue;
             }
 
