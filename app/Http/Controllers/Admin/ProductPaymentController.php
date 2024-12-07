@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\ProductPaymentExport;
 use App\Http\Requests\CreateProductPaymentRequest;
 use App\Http\Requests\UpdateProductPaymentRequest;
 use App\Http\Controllers\AppBaseController;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Flash;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductPaymentController extends AppBaseController
 {
@@ -70,6 +72,7 @@ class ProductPaymentController extends AppBaseController
                 'total_revenue' => 0
             ]
         ];
+
 
         foreach($report as $r) {
             $dataReport[$r->status]["total_orders"] = $r->total_orders;
@@ -175,5 +178,15 @@ class ProductPaymentController extends AppBaseController
         Flash::success('Product Payment deleted successfully.');
 
         return redirect(route('product-payments.index'));
+    }
+
+    /**
+     * exportExcel function
+     *
+     * @return void
+     */
+    public function exportExcel() 
+    {
+        return Excel::download(new ProductPaymentExport, 'payments.xlsx');
     }
 }

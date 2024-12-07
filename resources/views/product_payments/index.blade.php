@@ -62,6 +62,11 @@
                     <option value="100">Hiển thị 100/page</option>
                 </select>
             </div>
+            <div class="btn-group" style="margin-left: 20px;">
+                <a href="{{route('export')}}">
+                    <button class="form-control excel">Xuất excel</button>
+                </a>
+            </div>
         </div>
     </div>
     <div class="card">
