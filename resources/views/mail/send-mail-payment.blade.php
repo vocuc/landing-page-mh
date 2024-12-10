@@ -44,7 +44,7 @@
                                         <p style="color:#455056; font-size:15px;line-height:24px; margin:0;text-align: left;">
                                             Ngay sau khi thanh toán thành công, một mã code sẽ được gửi đến email của bạn, giúp bạn truy cập và đọc Ebook dễ dàng.
                                         </p>
-                                        <a href="https://thiennhai.com/products/{{$productId}}" style="background:#3B0980;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
+                                        <a href="https://thiennhai.com/products/{{$productId}}?utm=mail24h" style="background:#3B0980;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
                                             Hoàn thành ngay bây giờ
                                         </a>
                                         <p style="color:#455056; font-size:15px;line-height:24px;text-align: left;">
