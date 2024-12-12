@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::resource('product-payments', App\Http\Controllers\Admin\ProductPaymentController::class)->only(['index', 'show']);
 
     Route::resource('contact-forms', App\Http\Controllers\Admin\ContactFormController::class)->only(['index', 'show']);
+
+    Route::resource('blogs', App\Http\Controllers\BlogController::class);
 });
 
 Route::get('/privacy-policy', function () {
@@ -51,3 +53,4 @@ Route::get('/privacy-policy', function () {
 Route::get('/suports', function () {
     return view('suport');
 })->name('suport');
+
