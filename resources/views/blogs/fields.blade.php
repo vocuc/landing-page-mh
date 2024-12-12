@@ -18,7 +18,7 @@
 
 <div class="form-group col-sm-6">
     {!! Form::label('category_id', 'Category:') !!}
-    {!! Form::select('category_id', \App\Models\Admin\blog::$categories, isset($coinPackage->coin_id) ? $coinPackage->coin_id : null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::select('category_id', \App\Models\blog::$categories, isset($coinPackage->coin_id) ? $coinPackage->coin_id : null, ['class' => 'form-control', 'required']) !!}
 </div>
 <!-- Meta Title Field -->
 <div class="form-group col-sm-6">
@@ -41,7 +41,7 @@
 
 <div class="form-group col-sm-6">
     {!! Form::label('status', 'Status:') !!}
-    {!! Form::select('status', \App\Models\Admin\blog::$status, isset($coinPackage->coin_id) ? $coinPackage->coin_id : null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::select('status', \App\Models\blog::$status, isset($coinPackage->coin_id) ? $coinPackage->coin_id : null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Content Field -->

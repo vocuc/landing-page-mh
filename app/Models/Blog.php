@@ -35,7 +35,7 @@ class Blog extends Model
 
     public static array $rules = [
         'title' => 'required|string|max:255',
-        'slug' => 'required|string|max:255',
+        'slug' => 'string|max:255',
         'content' => 'required|string|max:65535',
         'short_desc' => 'required|string|max:500',
         'default_img_url' => 'required|string|max:255',
@@ -47,6 +47,22 @@ class Blog extends Model
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];
+
+    public static $categories = array(
+        7 => "Basic Guide",
+        1 => "DESIGN",
+        2 => "CODE",
+        3 => "Integrations",
+        4 => "Founder’s diary",
+        5 => "Design to code",
+        6 => "Document"
+        );
+    
+    
+        public static $status = [
+            1 => "Hoạt động",
+            0 => "Không hoạt động"
+        ];
 
     
 }

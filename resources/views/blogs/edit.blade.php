@@ -19,24 +19,23 @@
 
         <div class="card">
 
-            {!! Form::model($blog, ['route' => ['admin.blogs.update', $blog->id], 'method' => 'patch']) !!}
+            {!! Form::model($blog, ['route' => ['blogs.update', $blog->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">
-                    @include('admin.blogs.fields')
+                    @include('blogs.fields')
                 </div>
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('admin.blogs.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('blogs.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}
-
         </div>
     </div>
-    <script src="{{asset("ckeditor/ckeditor.js")}}"></script>
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
     <script>
         CKEDITOR.replace( 'editor' );
     </script>
