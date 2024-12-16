@@ -56,10 +56,12 @@ class ProductPaymentController extends AppBaseController
 
         if($request->has('start_time')) {
             $query->where('created_at', '>=', $request->get('start_time'));
+            $reportQuery->where('created_at', '>=', $request->get('start_time'));
         } 
         
         if($request->has('end_time')) {
             $query->where('created_at', '<', date("Y-m-d 00:00:00", strtotime($request->get('end_time')) + 86400));
+            $reportQuery->where('created_at', '<',  date("Y-m-d 00:00:00", strtotime($request->get('end_time')) + 86400));
         }
 
         $productPayments = $query->orderBy('id', 'DESC')->paginate($request->get('per_page', 10));
