@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateblogRequest;
 use App\Http\Requests\UpdateblogRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Repositories\blogRepository;
+use App\Repositories\BlogRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Str;
