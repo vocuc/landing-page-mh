@@ -18,7 +18,7 @@
                 <div class="inner">
                     <div>Tổng số đơn/Doanh thu</div>
                     <h3>{{$dataReport[1]['total_orders']}}</h3>
-                    <h3>{{number_format($dataReport[1]['total_revenue'], 0, '.', ',')}}</h3>
+                    <h3>{{number_format($dataReport[1]['total_revenue'] - $dataReport[1]['total_voucher'], 0, '.', ',')}}</h3>
                     <p>Đã thanh toán</p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="inner">
                     <div>Tổng số đơn/Doanh thu</div>
                     <h3>{{$dataReport[0]['total_orders']}}</h3>
-                    <h3>{{number_format($dataReport[0]['total_revenue'], 0, '.', ',')}}</h3>
+                    <h3>{{number_format($dataReport[0]['total_revenue'] - $dataReport[0]['total_voucher'], 0, '.', ',')}}</h3>
                     <p>Chưa thanh toán</p>
                 </div>
             </div>

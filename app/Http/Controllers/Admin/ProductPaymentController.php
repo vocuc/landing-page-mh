@@ -64,7 +64,12 @@ class ProductPaymentController extends AppBaseController
 
         $productPayments = $query->orderBy('id', 'DESC')->paginate($request->get('per_page', 10));
 
-        $report = $reportQuery->select('status', DB::raw('COUNT(*) as total_orders'), DB::raw('SUM(price) as total_revenue'))
+        $report = $reportQuery->select(
+            'status',  
+            DB::raw('COUNT(*) as total_orders'), 
+            DB::raw('SUM(price) as total_revenue'), 
+            DB::raw('SUM(discount_price) as total_voucher')
+        )
         ->groupBy('status')
         ->orderBy("status", 'DESC')
         ->get();
@@ -72,17 +77,20 @@ class ProductPaymentController extends AppBaseController
         $dataReport = [
             0 => [
                 'total_orders' => 0,
-                'total_revenue' => 0
+                'total_revenue' => 0,
+                'total_voucher' => 0
             ],
             1 => [
                 'total_orders' => 0,
-                'total_revenue' => 0
+                'total_revenue' => 0,
+                'total_voucher' => 0
             ]
         ];
 
         foreach($report as $r) {
             $dataReport[$r->status]["total_orders"] = $r->total_orders;
             $dataReport[$r->status]["total_revenue"] = $r->total_revenue;
+            $dataReport[$r->status]["total_voucher"] = $r->total_voucher;
         }
 
         return view('product_payments.index')
