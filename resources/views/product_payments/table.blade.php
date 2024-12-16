@@ -10,7 +10,8 @@
                     <th>Status</th>
                     <th>Download Code</th>
                     <th>Price</th>
-                    <!-- <th>Discount Price</th> -->
+                    <th>Discount Price</th>
+                    <th>Payment Amount</th>
                     <th>Product Id</th>
                     <th>Voucher Id</th>
                     <!-- <th>utm source</th> -->
@@ -28,11 +29,11 @@
                     <td>{{ $productPayment->phone }}</td>
                     <td>{{ $productPayment->status_label }}</td>
                     <td>{{ $productPayment->download_code }}</td>
-                    <td>{{ $productPayment->price }}</td>
-                    <!-- <td>{{ $productPayment->discount_price }}</td> -->
+                    <td>{{ number_format($productPayment->price, 0, ",", ".") }}</td>
+                    <td>{{ number_format($productPayment->discount_price, 0, ",", ".") }}</td>
+                    <td>{{ number_format($productPayment->price - $productPayment->discount_price, 0, ",", ".") }}</td>
                     <td>{{ $productPayment->product_id }}</td>
                     <td>{{ $productPayment->voucher_id }}</td>
-                    <!-- <td>{{ $productPayment->utm_source }}</td> -->
                     <td>{{ $productPayment->created_at }}</td>
                     <td>{{ $productPayment->utm_source }}</td>
                     <td style="width: 120px">

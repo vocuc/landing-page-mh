@@ -40,10 +40,10 @@
     <div class="clearfix"></div>
     <div class="col-sm-12" style="margin-bottom: 20px;">
         <div class="dt-buttons btn-group flex-wrap">
-            <button id="all" class="filter-day btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
+            <!-- <button id="all" class="filter-day btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
                 <span>Tất cả</span>
-            </button>
-            <button id="today" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
+            </button> -->
+            <!-- <button id="today" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
                 <span>Hôm nay</span>
             </button>
             <button id="yesterday" class="filter-day btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
@@ -54,7 +54,17 @@
             </button>
             <button id="30day" class="filter-day btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button">
                 <span>30 ngày qua</span>
-            </button>
+            </button> -->
+
+            <div class="btn-group" style="line-height: 35px;">
+                Filter: 
+            </div>
+            <div class="btn-group" style="margin-left: 20px;">
+                <input name="start_time" value="" class="form-control start_time"  placeholder="Từ ngày">
+            </div>
+            <div class="btn-group" style="margin-left: 20px;">
+                <input name="end_time" value="" class="form-control end_time"  placeholder="Đến ngày">
+            </div>
             <div class="btn-group" style="margin-left: 20px;">
                 <select class="form-control page-size">
                     <option value="10">Hiển thị 10/page</option>
@@ -63,8 +73,13 @@
                 </select>
             </div>
             <div class="btn-group" style="margin-left: 20px;">
-                <a href="{{route('export')}}">
+                <a href="{{route('export')}}?{{http_build_query(request()->all())}}">
                     <button class="form-control excel">Xuất excel</button>
+                </a>
+            </div>
+            <div class="btn-group" style="margin-left: 20px;">
+                <a href="{{ route('product-payments.index') }}">
+                    <button class="form-control excel">Bỏ Lọc</button>
                 </a>
             </div>
         </div>
@@ -80,8 +95,13 @@
         border-color: #545b62;
     }
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
+    $(".start_time").flatpickr();
+    $(".end_time").flatpickr();
+
     // Lấy tất cả các nút có class "filter-day"
     const buttons = document.querySelectorAll('.filter-day');
     const currentUrl = new URL(window.location.href);
@@ -135,6 +155,45 @@
 
         // Thêm hoặc cập nhật tham số 'itemsPerPage'
         currentUrl.searchParams.set('per_page', selectedValue);
+
+        // Điều hướng đến URL mới
+        window.location.href = currentUrl.toString();
+    });
+
+     // Lấy phần tử <select>
+    const startTime = document.querySelector('.start_time');
+    const startTimeValue = currentUrl.searchParams.get('start_time');
+    if (startTimeValue) {
+        startTime.value = startTimeValue;
+    }
+    startTime.addEventListener('change', function() {
+        // Lấy giá trị được chọn
+        const selectedValue = this.value;
+
+        // Lấy URL hiện tại
+        const currentUrl = new URL(window.location.href);
+
+        // Thêm hoặc cập nhật tham số 'itemsPerPage'
+        currentUrl.searchParams.set('start_time', selectedValue);
+
+        // Điều hướng đến URL mới
+        window.location.href = currentUrl.toString();
+    });
+
+    const endTime = document.querySelector('.end_time');
+    const endTimeValue = currentUrl.searchParams.get('end_time');
+    if (endTimeValue) {
+        endTime.value = endTimeValue;
+    }
+    endTime.addEventListener('change', function() {
+        // Lấy giá trị được chọn
+        const selectedValue = this.value;
+
+        // Lấy URL hiện tại
+        const currentUrl = new URL(window.location.href);
+
+        // Thêm hoặc cập nhật tham số 'itemsPerPage'
+        currentUrl.searchParams.set('end_time', selectedValue);
 
         // Điều hướng đến URL mới
         window.location.href = currentUrl.toString();

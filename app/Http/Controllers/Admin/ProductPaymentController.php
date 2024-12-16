@@ -54,9 +54,16 @@ class ProductPaymentController extends AppBaseController
             };
         }
 
+        if($request->has('start_time')) {
+            $query->where('created_at', '>=', $request->get('start_time'));
+        } 
+        
+        if($request->has('end_time')) {
+            $query->where('created_at', '<', date("Y-m-d 00:00:00", strtotime($request->get('end_time')) + 86400));
+        }
+
         $productPayments = $query->orderBy('id', 'DESC')->paginate($request->get('per_page', 10));
 
-        
         $report = $reportQuery->select('status', DB::raw('COUNT(*) as total_orders'), DB::raw('SUM(price) as total_revenue'))
         ->groupBy('status')
         ->orderBy("status", 'DESC')
@@ -72,7 +79,6 @@ class ProductPaymentController extends AppBaseController
                 'total_revenue' => 0
             ]
         ];
-
 
         foreach($report as $r) {
             $dataReport[$r->status]["total_orders"] = $r->total_orders;
@@ -185,8 +191,12 @@ class ProductPaymentController extends AppBaseController
      *
      * @return void
      */
-    public function exportExcel() 
+    public function exportExcel(Request $request) 
     {
-        return Excel::download(new ProductPaymentExport, 'payments.xlsx');
+        $startTime = $request->get('start_time');
+        
+        $endTime = $request->get('end_time');
+        
+        return Excel::download(new ProductPaymentExport($startTime, $endTime), 'payments.xlsx');
     }
 }

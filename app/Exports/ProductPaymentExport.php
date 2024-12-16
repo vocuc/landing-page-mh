@@ -5,17 +5,36 @@ namespace App\Exports;
 use App\Models\ProductPayment;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\FromQuery;
 
-class ProductPaymentExport implements FromCollection, WithHeadings
+class ProductPaymentExport implements FromQuery, WithHeadings
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    use Exportable;
+
+    protected $start_time;
+    protected $end_time;
+
+    public function __construct($start_time = null, $end_time = null)
     {
-        return ProductPayment::all();
+        $this->start_time = $start_time;
+        $this->end_time = $end_time;
     }
 
+    public function query()
+    {
+        $query = ProductPayment::query();
+
+        if ($this->start_time != null) {
+            $query->where('created_at', ">=", $this->start_time);
+        }
+
+        if ($this->end_time != null) {
+            $query->where('created_at', "<", $this->end_time);
+        }
+
+        return $query;
+    }
 
     public function headings(): array
     {
