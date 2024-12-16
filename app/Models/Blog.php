@@ -49,13 +49,7 @@ class Blog extends Model
     ];
 
     public static $categories = array(
-        7 => "Basic Guide",
-        1 => "DESIGN",
-        2 => "CODE",
-        3 => "Integrations",
-        4 => "Founder’s diary",
-        5 => "Design to code",
-        6 => "Document"
+        1 => "Basic Guide",
         );
     
     
