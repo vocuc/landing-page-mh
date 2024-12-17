@@ -39,7 +39,6 @@
     @include('flash::message')
     <div class="clearfix"></div>
     <div class="col-sm-12" style="margin-bottom: 20px;">
-        <div class="dt-buttons btn-group flex-wrap">
             <!-- <button id="all" class="filter-day btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
                 <span>Tất cả</span>
             </button> -->
@@ -59,30 +58,29 @@
             <div class="btn-group" style="line-height: 35px;">
                 Filter: 
             </div>
-            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
+            <div class="btn-group mb-1 col-sm-12 col-md-2">
                 <input name="start_time" value="" class="form-control start_time"  placeholder="Từ ngày">
             </div>
-            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
+            <div class="btn-group mb-1 col-sm-12 col-md-2">
                 <input name="end_time" value="" class="form-control end_time"  placeholder="Đến ngày">
             </div> 
-            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
+            <div class="btn-group mb-1 col-sm-12 col-md-2">
                 <select class="form-control page-size">
                     <option value="10">Hiển thị 10/page</option>
                     <option value="50">Hiển thị 50/page</option>
                     <option value="100">Hiển thị 100/page</option>
                 </select>
             </div>
-            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
+            <div class="btn-group mb-1 col-sm-12 col-md-2" @if(!is_mobile()) style="margin-right: 20px;" @endif>
                 <a class="w-100" href="{{route('export')}}?{{http_build_query(request()->all())}}">
                     <button class="form-control w-100 excel">Xuất excel</button>
                 </a>
             </div>
-            <div class="btn-group col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
+            <div class="btn-group col-sm-12 col-md-2">
                 <a class="w-100" href="{{ route('product-payments.index') }}">
                     <button class="form-control  excel">Bỏ Lọc</button>
                 </a>
             </div>
-        </div>
     </div>
     <div class="card">
         @include('product_payments.table')
