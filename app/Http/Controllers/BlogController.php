@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateblogRequest;
 use App\Http\Requests\UpdateblogRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Blog;
 use App\Repositories\BlogRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -131,5 +132,22 @@ class blogController extends AppBaseController
         Flash::success('Blog deleted successfully.');
 
         return redirect(route('blogs.index'));
+    }
+
+    public function  userShow()
+    {
+        $blogs = Blog::all();
+
+        return view('blog', ['blogs' => $blogs]);
+    }
+
+    public function userDetail($id) {
+        $blog = Blog::find($id);
+
+        if(empty($blog)) {
+            abort(404);
+        }
+
+        return view('blog-detail', ['blog' => $blog]);
     }
 }

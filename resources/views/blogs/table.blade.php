@@ -7,7 +7,6 @@
                 <th>Slug</th>
                 <th>Short Desc</th>
                 <th>Default Img</th>
-                <th>Category Id</th>
                 <th>Meta Title</th>
                 <th>Meta Description</th>
                 <th>Meta Keyword</th>
@@ -22,7 +21,6 @@
                     <td>{{ $blog->slug }}</td>
                     <td>{{ $blog->short_desc }}</td>
                     <td><img src="{{$blog->default_img_url}}" width="100px"></td>
-                    <td>{{ \App\Models\Admin\blog::$categories[$blog->category_id] }}</td>
                     <td>{{ $blog->meta_title }}</td>
                     <td>{{ $blog->meta_description }}</td>
                     <td>{{ $blog->meta_keyword }}</td>
@@ -30,13 +28,13 @@
                         @if($blog->status == 1) {{"Hoạt động"}}@else {{"Không hoạt động"}}@endif
                     </td>
                     <td  style="width: 120px">
-                        {!! Form::open(['route' => ['admin.blogs.destroy', $blog->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['blogs.destroy', $blog->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('admin.blogs.show', [$blog->id]) }}"
+                            <a href="{{ route('blogs.show', [$blog->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('admin.blogs.edit', [$blog->id]) }}"
+                            <a href="{{ route('blogs.edit', [$blog->id]) }}"
                                class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>
@@ -49,7 +47,6 @@
             </tbody>
         </table>
     </div>
-
     <div class="card-footer clearfix">
         <div class="float-right">
             @include('adminlte-templates::common.paginate', ['records' => $blogs])
