@@ -71,7 +71,7 @@
                     <option value="100">Hiển thị 100/page</option>
                 </select>
             </div>
-            <div class="btn-group mb-1 col-sm-12 col-md-2" @if(!is_mobile()) style="margin-right: 20px;" @endif>
+            <div class="btn-group mb-1 col-sm-12 col-md-2">
                 <a class="w-100" href="{{route('export')}}?{{http_build_query(request()->all())}}">
                     <button class="form-control w-100 excel">Xuất excel</button>
                 </a>
