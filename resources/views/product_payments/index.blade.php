@@ -59,25 +59,25 @@
             <div class="btn-group" style="line-height: 35px;">
                 Filter: 
             </div>
-            <div class="btn-group mb-1 col-sm-12" style="margin-right: 20px;">
+            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
                 <input name="start_time" value="" class="form-control start_time"  placeholder="Từ ngày">
             </div>
-            <div class="btn-group mb-1 col-sm-12" style="margin-right: 20px;">
+            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
                 <input name="end_time" value="" class="form-control end_time"  placeholder="Đến ngày">
             </div> 
-            <div class="btn-group mb-1 col-sm-12" style="margin-right: 20px;">
+            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
                 <select class="form-control page-size">
                     <option value="10">Hiển thị 10/page</option>
                     <option value="50">Hiển thị 50/page</option>
                     <option value="100">Hiển thị 100/page</option>
                 </select>
             </div>
-            <div class="btn-group mb-1 col-sm-12" style="margin-right: 20px;">
+            <div class="btn-group mb-1 col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
                 <a class="w-100" href="{{route('export')}}?{{http_build_query(request()->all())}}">
                     <button class="form-control w-100 excel">Xuất excel</button>
                 </a>
             </div>
-            <div class="btn-group col-sm-12" style="margin-right: 20px;">
+            <div class="btn-group col-sm-12" @if(!is_mobile()) style="margin-right: 20px;" @endif>
                 <a class="w-100" href="{{ route('product-payments.index') }}">
                     <button class="form-control  excel">Bỏ Lọc</button>
                 </a>
