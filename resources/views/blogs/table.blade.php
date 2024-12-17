@@ -7,9 +7,6 @@
                 <th>Slug</th>
                 <th>Short Desc</th>
                 <th>Default Img</th>
-                <th>Meta Title</th>
-                <th>Meta Description</th>
-                <th>Meta Keyword</th>
                 <th>Status</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -20,10 +17,7 @@
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->slug }}</td>
                     <td>{{ $blog->short_desc }}</td>
-                    <td><img src="{{$blog->default_img_url}}" width="100px"></td>
-                    <td>{{ $blog->meta_title }}</td>
-                    <td>{{ $blog->meta_description }}</td>
-                    <td>{{ $blog->meta_keyword }}</td>
+                    <td>@if(!empty($blog->default_img_url))<img src="{{$blog->default_img_url}}" width="100px">@endif</td>
                     <td>
                         @if($blog->status == 1) {{"Hoạt động"}}@else {{"Không hoạt động"}}@endif
                     </td>
