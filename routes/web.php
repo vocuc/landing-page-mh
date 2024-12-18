@@ -21,6 +21,7 @@ Route::get('/', function () {
 })->name('home-page');
 
 Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'userShow'])->name('blogs.userShow');
+
 Route::get('/blogs/{id}', [App\Http\Controllers\BlogController::class, 'userDetail'])->name('blogs.userDetail');
 
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
