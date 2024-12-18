@@ -26,30 +26,6 @@
                     <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
                 </a>
             @endforeach
-            @foreach ($blogs as $blog)
-                <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
-                    <h2 class="product-item__title mb-3">{{ $blog->title }}</h2>
-                    <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
-                </a>
-            @endforeach
-            @foreach ($blogs as $blog)
-                <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
-                    <h2 class="product-item__title mb-3">{{ $blog->title }}</h2>
-                    <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
-                </a>
-            @endforeach
-            @foreach ($blogs as $blog)
-                <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
-                    <h2 class="product-item__title mb-3">{{ $blog->title }}</h2>
-                    <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
-                </a>
-            @endforeach
-            @foreach ($blogs as $blog)
-                <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
-                    <h2 class="product-item__title mb-3">{{ $blog->title }}</h2>
-                    <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
-                </a>
-            @endforeach
         </div>
     </section>
     <style>
