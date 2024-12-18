@@ -32,6 +32,7 @@
         <li><a class="dropdown-item" href="/">Trang chủ</a></li>
         <li><a class="dropdown-item" href="{{route('products')}}">Sản phẩm</a></li>
         <li><a class="dropdown-item" href="{{route('suport')}}">Hỗ trợ</a></li>
+        <li><a class="dropdown-item" href="{{route('blogs.userShow')}}">Blogs</a></li>
       </ul>
     </div>
   </div>
