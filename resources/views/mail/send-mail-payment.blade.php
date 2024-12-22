@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="vi">
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
