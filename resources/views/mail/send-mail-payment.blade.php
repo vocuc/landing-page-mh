@@ -80,7 +80,9 @@
     </table>
     @endif
     @if($type == 2)
-        <img style="width: 100%;" src="https://thiennhai.com/images/photo_2024-12-20_16-02-37.jpg" />
+    <a href="https://thiennhai.com/products/{{$productId}}?utm=mail7d">
+        <img style="width: 100%;" src="https://thiennhai.com/images/photo_2024-12-22_19-30-03.jpg" />
+    </a>
     @endif
 </body>
 
