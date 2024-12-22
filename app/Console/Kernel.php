@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command('app:send-emails')->everyFiveMinutes();
-        $schedule->command('app:send-email-7-day')->everyFourHours();
+        // $schedule->command('app:send-email-7-day')->everyFourHours();
     }
 
     /**
