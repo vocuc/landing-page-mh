@@ -80,7 +80,7 @@
     </table>
     @endif
     @if($type == 2)
-        <img style="width: 100%;" src="{{asset('images/photo_2024-12-20_16-02-37.jpg')}}" />
+        <img style="width: 100%;" src="https://thiennhai.com/images/photo_2024-12-20_16-02-37.jpg" />
     @endif
 </body>
 
