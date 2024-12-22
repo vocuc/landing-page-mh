@@ -17,12 +17,14 @@ class SendMailMaketing extends Mailable implements ShouldQueue
     public $name;
     public $paymentCode;
     public $subjectTitle;
+    public $type;
 
-    public function __construct($name, $productId, $paymentCode, $subjectTitle = null)
+    public function __construct($name, $productId, $type = 1, $subjectTitle = "Hoàn thành thanh toán đơn hàng")
     {
         $this->name = $name;
         $this->productId = $productId;
-        $this->subjectTitle = "Hoàn thành thanh toán đơn hàng";
+        $this->subjectTitle = $subjectTitle;
+        $this->type = $type;
     }
 
     /**

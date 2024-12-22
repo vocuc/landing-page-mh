@@ -12,6 +12,7 @@
 </head>
 
 <body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0">
+    @if($type == 1)
     <table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
         style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
         <tr>
@@ -77,6 +78,10 @@
             </td>
         </tr>
     </table>
+    @endif
+    @if($type == 2)
+        <img style="width: 100%;" src="{{asset('images/photo_2024-12-20_16-02-37.jpg')}}" />
+    @endif
 </body>
 
 </html>
