@@ -29,8 +29,6 @@ class SendEmail7Day extends Command
      */
     public function handle()
     {
-        echo asset('images/photo_2024-12-20_16-02-37.jpg'); die;
-
         $payments = ProductPayment::where("sent_mail_7_day_status", 0)
         ->where("status", 0)
         ->where("created_at", "<=", date("Y-m-d H:i:s", time() - (86400 * 7)))
