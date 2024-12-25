@@ -15,14 +15,20 @@
                     Quay lại
                 </div>
             </a>
-            <h1>
-                Hướng dẫn
-            </h1>
+            <h1></h1>
         </div>
         <div class="content" style="min-height: 30px;">
             @foreach ($blogs as $blog)
-                <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
+                <!-- <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
                     <img src="{{$blog->default_img_url}}" style="max-width: 100%;">
+                    <h2 class="product-item__title mb-3">{{ $blog->title }}</h2>
+                    <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
+                </a> -->
+
+                <a href="{{ route('blogs.userDetail', ['id' => $blog->id]) }}" class="product-item">
+                    <div class="product-item__img">
+                        <img src="{{$blog->default_img_url}}" alt="">
+                    </div>
                     <h2 class="product-item__title mb-3">{{ $blog->title }}</h2>
                     <div class="blog-item-view-more">Chi tiết hướng dẫn > </div>
                 </a>
