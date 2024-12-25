@@ -2,7 +2,7 @@
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/shop.css') }}?v={{ filemtime(public_path('css/shop.css')) }}">
 @endpush
-@section('title', {{$blog->meta_title}})
+@section('title', '{{$blog->meta_title}}')
 @section('content')
 <section class="products mw-1220 m-auto">
         <div class="list-product-header ">
