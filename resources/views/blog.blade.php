@@ -15,7 +15,7 @@
                     Quay lại
                 </div>
             </a>
-            <h1></h1>
+            <h1>Blogs</h1>
         </div>
         <div class="content" style="min-height: 30px;">
             @foreach ($blogs as $blog)
