@@ -40,17 +40,6 @@
             font-size: 13px;
             color: white;
         }
-        @if(!is_mobile())
-        .main .products .content .product-item {
-            width: 29%;
-        }
-        @endif
-
-        @if(is_mobile())
-        .main .products .content .product-item {
-            width: 100%;
-        }
-        @endif
     </style>
 @endsection
 @push('scripts')
