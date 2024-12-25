@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateblogRequest;
-use App\Http\Requests\UpdateblogRequest;
+use App\Http\Requests\CreateBlogRequest;
+use App\Http\Requests\UpdateBlogRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Models\Blog;
 use App\Repositories\BlogRepository;
@@ -43,7 +43,7 @@ class blogController extends AppBaseController
     /**
      * Store a newly created blog in storage.
      */
-    public function store(CreateblogRequest $request)
+    public function store(CreateBlogRequest $request)
     {
         $input = $request->all();
 
@@ -91,7 +91,7 @@ class blogController extends AppBaseController
     /**
      * Update the specified blog in storage.
      */
-    public function update($id, UpdateblogRequest $request)
+    public function update($id, UpdateBlogRequest $request)
     {
         $blog = $this->blogRepository->find($id);
 
