@@ -21,7 +21,7 @@
         </div>
         <div class="content">
             @foreach ($products as $product)
-                <a href="{{ route('products.detail', ['id' => $product->id]) }}" class="product-item">
+                <a href="{{ route('products.detail', ['id' => $product->id, 'utm' => $utm]) }}" class="product-item">
                     <div class="product-item__img"><img src="{{ $product->image_link }}"
                             alt=""></div>
                     <h2 class="product-item__title">{{ $product->name }}</h2>

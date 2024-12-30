@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $products = Product::all();
 
-        return view('product', compact('products'));
+
+        return view('product', [
+            "products" => $products,
+            "utm" => $request->get("utm")
+        ]);
     }
 
     public function show(Product $id)
