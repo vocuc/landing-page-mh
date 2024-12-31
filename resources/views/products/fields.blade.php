@@ -30,7 +30,8 @@
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('full_description', 'Full Description:') !!}
     {!! Form::textarea('full_description', null, [
-        'class' => 'form-control editor',
+        'class' => 'form-control',
+        'id' => 'editor'
     ]) !!}
 </div>
 
