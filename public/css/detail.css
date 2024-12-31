@@ -213,6 +213,11 @@
   -webkit-text-fill-color: transparent;
 }
 
+.main .product .content .description .value img {
+  width: 100% !important;
+  height: auto !important;
+}
+
 @media only screen and (max-width: 1139px) {
 
   .main {
@@ -230,11 +235,6 @@
 
   .main .product .content .description {
     margin-top: 55px;
-  }
-
-  .main .product .content .description .value img {
-    width: 100% !important;
-    height: auto !important;
   }
 
   .main .product .content .group-info-product {
