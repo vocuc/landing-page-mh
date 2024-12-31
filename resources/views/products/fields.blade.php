@@ -30,7 +30,7 @@
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('full_description', 'Full Description:') !!}
     {!! Form::textarea('full_description', null, [
-        'class' => 'form-control',
+        'class' => 'form-control editor',
     ]) !!}
 </div>
 
@@ -66,61 +66,3 @@
         isset($product) ? $product->is_active_voucher : null
         , ['class' => 'form-control']) !!}
 </div>
-
-<link rel="stylesheet" href="{{ asset('css/ckeditor5.css') }}" />
-<script src="{{ asset('js/ckeditor5.umd.js') }}"></script>
-
-<script type="module">
-    const {
-        ClassicEditor,
-        Heading, // Thêm plugin Heading
-        Essentials,
-        Bold,
-        Italic,
-        Font,
-        Paragraph,
-        Image,
-        ImageInsert,
-        ImageToolbar,
-        ImageCaption,
-        ImageStyle,
-        ImageResizeEditing,
-        ImageResizeHandles
-    } = CKEDITOR;
-    ClassicEditor
-        .create(document.querySelector('#full_description'), {
-            plugins: [
-                Essentials,
-                Bold,
-                Italic,
-                Font,
-                Paragraph,
-                Image,
-                ImageToolbar,
-                ImageCaption,
-                ImageStyle,
-                ImageInsert,
-                ImageResizeEditing, ImageResizeHandles, Heading
-            ],
-            toolbar: ['heading', '|',
-                'undo', 'redo', '|', 'bold', 'italic', '|',
-                'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
-                'imageInsert', 'link'
-            ],
-            image: {
-                toolbar: ['imageTextAlternative',  'imageStyle:alignBlockLeft','imageStyle:alignCenter', 'imageStyle:alignBlockRight', ],
-                insert: {
-                    // This is the default configuration, you do not need to provide
-                    // this configuration key if the list content and order reflects your needs.
-                    integrations: ['url']
-                }
-            },
-
-        })
-        .then(editor => {
-            console.log(editor);
-        })
-        .catch(error => {
-            console.error(error);
-        });
-</script>
