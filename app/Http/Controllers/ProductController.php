@@ -11,6 +11,9 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
+        if($request->has('utm')) {
+            session(['utm' => $request->get('utm')]);
+        }
 
         return view('product', [
             "products" => $products,
@@ -18,10 +21,17 @@ class ProductController extends Controller
         ]);
     }
 
-    public function show(Product $id)
+    public function show(Product $id, Request $request)
     {
         $product = $id;
 
-        return view('detail', compact('product'));
+        if($request->has('utm')) {
+            session(['utm' => $request->get('utm')]);
+        }
+        
+        return view('detail', [
+            "product" => $product,
+            "utm" => session('utm')
+        ]);
     }
 }

@@ -173,7 +173,7 @@
                     <div class="position-relative">
                         <input type="text" class="col-12 input-custom" name="email"
                             placeholder="Email của bạn">
-                            <input type="text" hidden name="utm_source" value="{{request()->get('utm')}}" />
+                            <input type="text" hidden name="utm_source" value="{{$utm}}" />
                     </div>
                     <div class="position-relative">
                         <input type="text" class="col-12 input-custom" name="phone"
