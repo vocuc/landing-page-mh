@@ -4,7 +4,7 @@ return [
     'QR_INFORMATION' => [
         'URL_GENERATE_QRCODE' => 'https://qr.limcorp.vn/qrcode.png?',
         'BANK_NUMBER' => '970422',
-        'ACCOUNT_NUMBER' => '99192886868'
+        'ACCOUNT_NUMBER' => '1200104838688'
     ],
-    'MAIL_CONTACT' => 'nqnam43@gmail.com'
+    'MAIL_CONTACT' => 'ttn@gmail.com'
 ];
