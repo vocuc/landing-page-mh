@@ -63,6 +63,8 @@ $(document).ready(function () {
 
                     // $("#formPay1")[0].reset();
 
+                    $("#payment-code").text(data.content);
+
                     $("#formPay1").validate().resetForm();
 
                     $('#modalContactPay2').modal('show');

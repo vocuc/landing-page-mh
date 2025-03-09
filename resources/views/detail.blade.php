@@ -232,6 +232,18 @@
                         <div class="info">
                             <div class="payment-list">
                                 <div class="payment-item">
+                                    <div class="title">Ngân hàng</div>
+                                    <div class="value">MBBank</div>
+                                </div>
+                                <div class="payment-item">
+                                    <div class="title">Số tài khoản</div>
+                                    <div class="value">{{config('constants.QR_INFORMATION.ACCOUNT_NUMBER')}}</div>
+                                </div>
+                                <div class="payment-item">
+                                    <div class="title">Nội dung chuyển khoản</div>
+                                    <div class="value" id="payment-code"></div>
+                                </div>
+                                <div class="payment-item">
                                     <div class="title">Tài nguyên</div>
                                     <div class="value">{{ $product->name }}</div>
                                 </div>
