@@ -240,6 +240,10 @@
                                     <div class="value">{{config('constants.QR_INFORMATION.ACCOUNT_NUMBER')}}</div>
                                 </div>
                                 <div class="payment-item">
+                                    <div class="title">Chủ tài khoản</div>
+                                    <div class="value">NONG DUC THANH</div>
+                                </div>
+                                <div class="payment-item">
                                     <div class="title">Nội dung chuyển khoản</div>
                                     <div class="value" id="payment-code"></div>
                                 </div>
