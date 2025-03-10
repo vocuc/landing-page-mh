@@ -224,7 +224,7 @@
                     </div>
                     <div class="form-header">
                         <div class="title">Quét để thanh toán</div>
-                        <div class="sub-title">Quét mã QR để thanh toán, mã để tải sẽ được gửi đến số của bạn</div>
+                        <div class="sub-title">Quét mã QR để thanh toán hoặc chuyển khoản, mã để tải sẽ được gửi đến email của bạn</div>
                     </div>
                 
                     <div class="payment-info">
