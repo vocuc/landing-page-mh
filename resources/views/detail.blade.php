@@ -232,20 +232,44 @@
                         <div class="info">
                             <div class="payment-list">
                                 <div class="payment-item">
-                                    <div class="title">Ngân hàng</div>
-                                    <div class="value">MBBank</div>
+                                    <div class="title">Ngân hàng </div>
+                                    <div class="value"><span class="text">MBBank</span> <svg style="cursor: pointer" class="copy-btn" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="14" height="14" transform="translate(0.15625 0.5)" fill="url(#pattern0_1825_8402)"></rect>
+                                        <defs>
+                                            <pattern id="pattern0_1825_8402" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_1825_8402" transform="scale(0.05)"></use>
+                                            </pattern>
+                                            <image id="image0_1825_8402" width="20" height="20" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAADS0tLV1dX////S0tLX19fz8/PRhKooAAAAA3RSTlMA40mAJZ3FAAAAN0lEQVQI12NgYFB0AQMhIFMEwnQEMl2MwcAFiQlUCWeKwJlAaVoxQ6DOATJToY7E6i6Ew1G8AwCFbSk8iIU3GwAAAABJRU5ErkJggg=="></image>
+                                        </defs>
+                                    </svg></div>
                                 </div>
                                 <div class="payment-item">
-                                    <div class="title">Số tài khoản</div>
-                                    <div class="value">{{config('constants.QR_INFORMATION.ACCOUNT_NUMBER')}}</div>
+                                    <div class="title">Số tài khoản </div>
+                                    <div class="value"><span class="text">{{config('constants.QR_INFORMATION.ACCOUNT_NUMBER')}}</span> <svg style="cursor: pointer" class="copy-btn" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="14" height="14" transform="translate(0.15625 0.5)" fill="url(#pattern0_1825_8402)"></rect>
+                                        <defs>
+                                            <pattern id="pattern0_1825_8402" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_1825_8402" transform="scale(0.05)"></use>
+                                            </pattern>
+                                            <image id="image0_1825_8402" width="20" height="20" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAADS0tLV1dX////S0tLX19fz8/PRhKooAAAAA3RSTlMA40mAJZ3FAAAAN0lEQVQI12NgYFB0AQMhIFMEwnQEMl2MwcAFiQlUCWeKwJlAaVoxQ6DOATJToY7E6i6Ew1G8AwCFbSk8iIU3GwAAAABJRU5ErkJggg=="></image>
+                                        </defs>
+                                    </svg></div>
                                 </div>
                                 <div class="payment-item">
                                     <div class="title">Chủ tài khoản</div>
                                     <div class="value">NONG DUC THANH</div>
                                 </div>
                                 <div class="payment-item">
-                                    <div class="title">Nội dung chuyển khoản</div>
-                                    <div class="value" id="payment-code"></div>
+                                    <div class="title">Nội dung chuyển khoản </div>
+                                    <div class="value" id="payment-code"><span class="text"></span> <svg style="cursor: pointer" class="copy-btn" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="14" height="14" transform="translate(0.15625 0.5)" fill="url(#pattern0_1825_8402)"></rect>
+                                        <defs>
+                                            <pattern id="pattern0_1825_8402" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                                <use xlink:href="#image0_1825_8402" transform="scale(0.05)"></use>
+                                            </pattern>
+                                            <image id="image0_1825_8402" width="20" height="20" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAADS0tLV1dX////S0tLX19fz8/PRhKooAAAAA3RSTlMA40mAJZ3FAAAAN0lEQVQI12NgYFB0AQMhIFMEwnQEMl2MwcAFiQlUCWeKwJlAaVoxQ6DOATJToY7E6i6Ew1G8AwCFbSk8iIU3GwAAAABJRU5ErkJggg=="></image>
+                                        </defs>
+                                    </svg></div>
                                 </div>
                                 <div class="payment-item">
                                     <div class="title">Tài nguyên</div>

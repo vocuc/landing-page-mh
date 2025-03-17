@@ -63,7 +63,7 @@ $(document).ready(function () {
 
                     // $("#formPay1")[0].reset();
 
-                    $("#payment-code").text(data.content);
+                    $("#payment-code .text").text(data.content);
 
                     $("#formPay1").validate().resetForm();
 
@@ -303,7 +303,7 @@ $(document).ready(function () {
                         $('#modalContactPay4').modal('hide');
 
                         location.href = data.link_redirect;
-                        
+
                         $('#formPay4').modal('hide');
 
                         $("#formPay4")[0].reset();
@@ -370,4 +370,63 @@ $(document).ready(function () {
     }
 
     $('#formPay4').validate(optionConfigValidate3);
+
+    function showNotify(type, title, message, delay = 3000) {
+        // Tạo phần tử div chứa Toast
+        var toastContainer = document.createElement("div");
+        toastContainer.classList.add(
+            "toast",
+            "position-fixed",
+            "top-0",
+            "start-50",
+            "translate-middle-x",
+            "mt-3",
+            "text-bg-" + type
+        );
+        toastContainer.setAttribute("role", "alert");
+        toastContainer.setAttribute("aria-live", "assertive");
+        toastContainer.setAttribute("aria-atomic", "true");
+
+        toastContainer.style.zIndex = "9999";
+        
+        // Nội dung của Toast
+        toastContainer.innerHTML = `
+          <div class="toast-header">
+            <strong class="me-auto">${title}</strong>
+            <small>vừa xong</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            ${message}
+          </div>
+        `;
+
+        // Thêm vào body
+        document.body.appendChild(toastContainer);
+
+        // Kích hoạt Toast
+        var toast = new bootstrap.Toast(toastContainer, { autohide: true, delay: delay });
+        toast.show();
+
+        // Xóa Toast sau khi ẩn
+        toastContainer.addEventListener("hidden.bs.toast", function () {
+            toastContainer.remove();
+        });
+    }
+
+
+    function copy(textToCopy) {
+        navigator.clipboard.writeText(textToCopy).then(function () {
+            showNotify('success', 'Thông báo', 'Đã sao chép thành công');
+        }).catch(function (error) {
+            console.error("Không thể sao chép văn bản: ", error);
+        });
+    }
+
+    $('.copy-btn').click(function (e) {
+        e.preventDefault();
+
+        copy($(this).parents('.payment-item').find('.value .text').text());
+
+    });
 });
