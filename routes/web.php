@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
     Route::get('product-payments/export', [App\Http\Controllers\Admin\ProductPaymentController::class, 'exportExcel'])->name("export");
 
-    Route::resource('product-payments', App\Http\Controllers\Admin\ProductPaymentController::class)->only(['index', 'show']);
+    Route::resource('product-payments', App\Http\Controllers\Admin\ProductPaymentController::class);
 
     Route::resource('contact-forms', App\Http\Controllers\Admin\ContactFormController::class)->only(['index', 'show']);
 
