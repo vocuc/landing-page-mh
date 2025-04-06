@@ -14,17 +14,17 @@ class ProductPayment extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        // 'user_name',
-        // 'email',
-        // 'phone',
+        'user_name',
+        'email',
+        'phone',
         'status',
-        // 'download_code',
-        // 'price',
-        // 'product_id',
-        // 'voucher_id',
-        // 'discount_price',
-        // 'utm_source',
-        // 'sent_mail_status'
+        'download_code',
+        'price',
+        'product_id',
+        'voucher_id',
+        'discount_price',
+        'utm_source',
+        'sent_mail_status'
     ];
 
 
