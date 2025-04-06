@@ -19,9 +19,10 @@
 <!-- Status Field -->
 <div class="form-group col-sm-6">
     <div class="form-check">
-        {!! Form::hidden('status', 0, ['class' => 'form-check-input']) !!}
-        {!! Form::checkbox('status', '1', null, ['class' => 'form-check-input']) !!}
         {!! Form::label('status', 'Status', ['class' => 'form-check-label']) !!}
+        {!! Form::select('status', [0 => 'Inactive', 1 => 'Active'], 
+        isset($productPayment) ? $productPayment->status : 0
+        , ['class' => 'form-control']) !!}
     </div>
 </div>
 
