@@ -42,7 +42,10 @@
                                 class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-
+                            <a href="{{ route('product-payments.edit', [$productPayment->id]) }}"
+                               class='btn btn-default btn-xs'>
+                                <i class="far fa-edit"></i>
+                            </a>
                         </div>
                         {!! Form::close() !!}
                     </td>
