@@ -296,6 +296,7 @@ $(document).ready(function () {
                         $('#modalContactPay4 .btn-custom .btn-type-1__icon').hide();
                     },
                     success: function (data) {
+                        console.log(112);
                         $('#modalContactPay4 .btn-custom .spinner-border').hide();
 
                         $('#modalContactPay4 .btn-custom .btn-type-1__icon').show();
@@ -311,6 +312,7 @@ $(document).ready(function () {
                         $("#formPay4").validate().resetForm();
                     },
                     error: function (error) {
+                        console.log(111);
                         $('#modalContactPay4 .btn-custom .spinner-border').hide();
 
                         $('#modalContactPay4 .btn-custom .btn-type-1__icon').show();
