@@ -361,7 +361,7 @@
                         <span >Chuyển khoản xong vui lòng gửi bill về địa chỉ email: info@thiennhai.vn để được hỗ trợ sớm.</span>
                     </div>
                     <div class="group-btn-action form-footer">
-                        <button type="submit" class="btn-custom btn-type-1">
+                        <button class="btn-custom btn-type-1 close-modal"data-bs-dismiss="modal" aria-label="Close">
                             <div>Đồng ý</div>
                         </button>
                     </div>
