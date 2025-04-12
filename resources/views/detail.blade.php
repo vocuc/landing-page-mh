@@ -357,7 +357,7 @@
                             </div>
                         </button>
                     </div> -->
-                    <div style="color: white;font-size: 18px;text-align:right">
+                    <div style="color: white;font-size: 18px;">
                         <span >Chuyển khoản xong vui lòng gửi bill về địa chỉ email: info@thiennhai.vn để được hỗ trợ sớm.</span>
                     </div>
                     <div class="group-btn-action form-footer">
