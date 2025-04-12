@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\ProductPayments\Status;
 use App\Exports\ProductPaymentExport;
 use App\Http\Requests\CreateProductPaymentRequest;
 use App\Http\Requests\UpdateProductPaymentRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Mail\SendOTP;
 use App\Repositories\ProductPaymentRepository;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Flash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ProductPaymentController extends AppBaseController
@@ -165,6 +168,10 @@ class ProductPaymentController extends AppBaseController
             Flash::error('Product Payment not found');
 
             return redirect(route('product-payments.index'));
+        }
+
+        if ($request->get("status") != $productPayment->status && $request->get("status") == Status::SUCCESS->value) {
+            Mail::to($productPayment->email)->send(new SendOTP($productPayment->download_code, $productPayment->user_name));
         }
 
         $productPayment = $this->productPaymentRepository->update($request->all(), $id);
