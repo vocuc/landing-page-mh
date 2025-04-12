@@ -336,7 +336,7 @@
                         <div class="title">Mã code của bạn</div>
                         <div class="sub-title">Mã code sẽ được gửi tới email <span id="email-send-code"></span></div>
                     </div>
-                    <div class="position-relative">
+                    <!-- <div class="position-relative">
                         <input type="text" class="col-12 input-custom" name="code"
                             placeholder="Mã code của bạn">
                     </div>
@@ -355,6 +355,14 @@
                             <div class="spinner-border" style="display: none;width:30px;height:30px;" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
+                        </button>
+                    </div> -->
+                    <div style="color: white;font-size: 18px;text-align:right">
+                        <span >Chuyển khoản xong vui lòng gửi bill về địa chỉ email: info@thiennhai.vn để được hỗ trợ sớm.</span>
+                    </div>
+                    <div class="group-btn-action form-footer">
+                        <button type="submit" class="btn-custom btn-type-1">
+                            <div>Đồng ý</div>
                         </button>
                     </div>
                 </form>
