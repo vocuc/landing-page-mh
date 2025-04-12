@@ -282,10 +282,9 @@ $(document).ready(function () {
         errorElement: 'span',
         errorClass: 'form-input-error',
         submitHandler: function (form) {
-            console.log(423424234);
             let formData = new FormData(form);
-            console.log(423424);
-            if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
+            // console.log(423424);
+            // if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
                 $.ajax({
                     url: form.action,
                     data: formData,
@@ -355,7 +354,7 @@ $(document).ready(function () {
                         alert('Không thành công')
                     }
                 });
-            }
+            // }
 
         }
     };
