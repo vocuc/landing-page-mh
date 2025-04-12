@@ -458,7 +458,7 @@
     }
 
     // Cập nhật mỗi giây
-    const countdownInterval = setInterval(updateCountdown, 1000);
+    // const countdownInterval = setInterval(updateCountdown, 1000);
 
     // Gọi hàm ngay lập tức để hiển thị thời gian ngay khi tải trang
     // updateCountdown();
