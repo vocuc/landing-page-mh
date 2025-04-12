@@ -367,7 +367,7 @@ $(document).ready(function () {
                 }
             }
         }
-
+        console.log(34343);
         $("#formPay4").validate().showErrors(errors);
     }
 
