@@ -28,6 +28,7 @@ $(document).ready(function () {
         errorElement: 'span',
         errorClass: 'form-input-error',
         submitHandler: function (form) {
+            console.log(423423);
             let formData = new FormData(form);
 
             formData.append('form_session_id', form.dataset.form_session_id);
@@ -167,6 +168,7 @@ $(document).ready(function () {
         errorElement: 'span',
         errorClass: 'form-input-error',
         submitHandler: function (form) {
+            console.log(4234334);
             let formData = new FormData(form);
 
             if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
@@ -280,8 +282,9 @@ $(document).ready(function () {
         errorElement: 'span',
         errorClass: 'form-input-error',
         submitHandler: function (form) {
+            console.log(423424234);
             let formData = new FormData(form);
-
+            console.log(423424);
             if ($('#modalContactPay3 .btn-custom .spinner-border').css('display') == 'none') {
                 $.ajax({
                     url: form.action,
