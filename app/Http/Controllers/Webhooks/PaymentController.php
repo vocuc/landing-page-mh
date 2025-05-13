@@ -29,56 +29,56 @@ class PaymentController extends Controller
                 'ip' => $request->ip()
             ])
         ]);
-
-        $paymentData = $request->all();
-
-        if (empty($paymentData['content']) || !Str::contains($paymentData['content'] ?? "", "THIENNHAI")) {
-            return response()->json([
-                'status'    =>  'failed',
-                'message'   => 'Giao dịch không hợp lệ',
-            ], 400);
-        }
-
-        preg_match('/\bP\s?AYMENT\w*\b/', $paymentData['content'], $paymentCode);
         
-        if(count($paymentCode) == 0){
-            return response()->json([
-                'status'    =>  'failed',
-                'message'   => 'Validate payment_code error',
-            ], 400);
-        }
+        // $paymentData = $request->all();
 
-        $paymentCode = preg_replace('/\s/', '', $paymentCode[0]);
+        // if (empty($paymentData['content']) || !Str::contains($paymentData['content'] ?? "", "THIENNHAI")) {
+        //     return response()->json([
+        //         'status'    =>  'failed',
+        //         'message'   => 'Giao dịch không hợp lệ',
+        //     ], 400);
+        // }
 
-        $payment = $this->paymentService->getPayment($paymentCode);
+        // preg_match('/\bP\s?AYMENT\w*\b/', $paymentData['content'], $paymentCode);
+        
+        // if(count($paymentCode) == 0){
+        //     return response()->json([
+        //         'status'    =>  'failed',
+        //         'message'   => 'Validate payment_code error',
+        //     ], 400);
+        // }
 
-        if (!$payment) {
-            return response()->json([
-                'status'    =>  'failed',
-                'message'   => 'Giao dịch không khả dụng!',
-            ], 404);
-        }
+        // $paymentCode = preg_replace('/\s/', '', $paymentCode[0]);
 
-        $payemntTypeInstance = null;
+        // $payment = $this->paymentService->getPayment($paymentCode);
 
-        if ($payment->type === TypePayment::PRODUCT->value) {
-            $payemntTypeInstance = new PaymentProduct();
-        }
+        // if (!$payment) {
+        //     return response()->json([
+        //         'status'    =>  'failed',
+        //         'message'   => 'Giao dịch không khả dụng!',
+        //     ], 404);
+        // }
 
-        $paymentContext = new PaymentStrategyContext($payemntTypeInstance);
+        // $payemntTypeInstance = null;
 
-        $result = $paymentContext->handleWebhook($payment, $paymentData['amount']);
+        // if ($payment->type === TypePayment::PRODUCT->value) {
+        //     $payemntTypeInstance = new PaymentProduct();
+        // }
 
-        if (is_array($result) && $result['status'] === false) {
-            return response()->json([
-                'status'    =>  'failed',
-                'message'   => $result['message'],
-            ], 400);
-        }
+        // $paymentContext = new PaymentStrategyContext($payemntTypeInstance);
+
+        // $result = $paymentContext->handleWebhook($payment, $paymentData['amount']);
+
+        // if (is_array($result) && $result['status'] === false) {
+        //     return response()->json([
+        //         'status'    =>  'failed',
+        //         'message'   => $result['message'],
+        //     ], 400);
+        // }
 
         return response()->json([
-            'status'    =>  'success',
-            'message'   => '',
+            'success'    =>  'true',
+            'message'   => 'ok',
         ]);
     }
 }
