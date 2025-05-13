@@ -233,7 +233,7 @@
                             <div class="payment-list">
                                 <div class="payment-item">
                                     <div class="title">Ngân hàng </div>
-                                    <div class="value"><span class="text">TP BANK</span> <svg style="cursor: pointer" class="copy-btn" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <div class="value"><span class="text">MB BANK</span> <svg style="cursor: pointer" class="copy-btn" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <rect width="14" height="14" transform="translate(0.15625 0.5)" fill="url(#pattern0_1825_8402)"></rect>
                                         <defs>
                                             <pattern id="pattern0_1825_8402" patternContentUnits="objectBoundingBox" width="1" height="1">
