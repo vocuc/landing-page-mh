@@ -29,7 +29,7 @@ class PaymentController extends Controller
                 'ip' => $request->ip()
             ])
         ]);
-        var_dump($request->all());
+        var_dump($request->all());die;
         // $paymentData = $request->get("payment", []);
 
         // if (empty($paymentData['content']) || !Str::contains($paymentData['content'] ?? "", "THIENNHAI")) {
