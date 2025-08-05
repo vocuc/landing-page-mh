@@ -321,7 +321,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <form action="{{ route('product-payment.download') }}" class="modal-form" id="formPay3">
-                    <!-- <input type="hidden" id="code-id" name="id"> -->
                     <div class="close-modal btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -334,31 +333,10 @@
                     </div>
                     <div class="form-header">
                         <div class="title">Mã code của bạn</div>
-                        <div class="sub-title">Mã code sẽ được gửi tới email <span id="email-send-code"></span></div>
+                        <div class="sub-title">Xin vui lưu mã code của bạn lại để sự dụng cho những lần tiếp theo.</div>
                     </div>
-                    <!-- <div class="position-relative">
-                        <input type="text" class="col-12 input-custom" name="code"
-                            placeholder="Mã code của bạn">
-                    </div>
-                    <div style="color: white;font-size: 18px;text-align:right">
-                        <span id="countdown">02:00</span>
-                    </div>
-                    <div class="group-btn-action form-footer">
-                        <button type="submit" class="btn-custom btn-type-1">
-
-                            <div>Tải xuống</div>
-                            <div class="btn-type-1__icon"><svg width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 6L12 18M12 18L8 14M12 18L16 14" stroke="white" stroke-width="1.6"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg></div>
-                            <div class="spinner-border" style="display: none;width:30px;height:30px;" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </button>
-                    </div> -->
                     <div style="color: white;font-size: 18px;">
-                        <span >Chuyển khoản xong vui lòng gửi bill về địa chỉ email: info@thiennhai.vn để được hỗ trợ sớm.</span>
+                        <span>Mã code của bạn là:</span> <span id="download-code"></span>
                     </div>
                     <div class="group-btn-action form-footer">
                         <button class="btn-custom btn-type-1"data-bs-dismiss="modal" aria-label="Close">
@@ -424,8 +402,8 @@
 @push('scripts')
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js">
 </script>
-<script src="{{ asset('js/detail.js') }}?v={{ filemtime(public_path('js/detail.js')) }}"></script>
-<script src="{{ asset('js/index.js') }}"></script>
+<script src="{{ asset('js/detail.js') }}?v=22222"></script>
+<script src="{{ asset('js/index.js') }}?v=22222"></script>
 <script>
     const myModal = new bootstrap.Modal('#modalContactPay1', {});
     $('.btn-close-qr').on('click', function () {

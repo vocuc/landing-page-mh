@@ -62,13 +62,13 @@ $(document).ready(function () {
 
                     setEmailStep3(data.email)
 
-                    // $("#formPay1")[0].reset();
-
                     $("#payment-code .text").text(data.content);
 
                     $("#formPay1").validate().resetForm();
 
                     $('#modalContactPay2').modal('show');
+
+                    $('#download-code').text(data.download_code);
                 },
                 error: function (error) {
                     $('.loading-wrapper-bg').removeClass('show'); // Hiển thị loading nếu cần
@@ -320,7 +320,7 @@ $(document).ready(function () {
                         $('#modalContactPay4 .btn-custom .btn-type-1__icon').show();
                         if (error.status === 404) {
                             const listError = {
-                                code: ['Mã code không hợp lệ']
+                                code: ['Mã code không hợp lệ hoặc chưa được thanh toán.']
                             };
 
                             showErrorResponse4(listError);
@@ -369,7 +369,6 @@ $(document).ready(function () {
                 }
             }
         }
-        console.log(34343);
         $("#formPay4").validate().showErrors(errors);
     }
 

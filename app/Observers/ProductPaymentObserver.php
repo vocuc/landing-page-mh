@@ -15,8 +15,7 @@ class ProductPaymentObserver
     }
 
     public function created(ProductPayment $productPayment) {
-        $this->productPaymentService->makeDownloadCode($productPayment);
-
+        
     }
 
     public function updated(ProductPayment $productPayment): void

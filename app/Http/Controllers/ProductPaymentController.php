@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Response;
-use Str;
+use Illuminate\Support\Str;
 
 class ProductPaymentController extends Controller
 {
@@ -23,7 +23,12 @@ class ProductPaymentController extends Controller
 
     private $productRepository;
 
-    public function __construct(PaymentService $paymentService, ProductRepository $productRepository)
+    private $productPaymentService;
+
+    public function __construct(
+        PaymentService $paymentService, 
+        ProductRepository $productRepository,
+        )
     {
         $this->paymentService = $paymentService;
 
@@ -64,6 +69,9 @@ class ProductPaymentController extends Controller
             'utm_source' => $request->get('utm_source')
         ]);
 
+        $productPayment->download_code = $productPayment->id .  random_int(1000, 9999);
+        $productPayment->save();
+
         $finalPrice = $productPayment->price - $productPayment->discount_price;
 
         $genaratePayment = $this->paymentService->genaratePayment(
@@ -82,6 +90,8 @@ class ProductPaymentController extends Controller
 
         $genaratePayment['final_price'] = $finalPrice;
 
+        $genaratePayment['download_code'] = $productPayment->download_code;
+
         return response()->json($genaratePayment);
     }
 
@@ -89,13 +99,16 @@ class ProductPaymentController extends Controller
     {
         $data = $request->validated();
 
-        $productPayment = ProductPayment::where('status', Status::SUCCESS)
-            ->where('download_code', $data['code'])->first();
+        $productPayment = ProductPayment::where('download_code', $data['code'])->first();
 
         if ($productPayment === null || $productPayment->product === null) {
             abort(404);
         }
 
+        if ($productPayment->status != Status::SUCCESS) {
+            return response()->json(['error' => 'Bạn chưa thanh toán.'], 404);
+        }
+        
         $response = Http::get($productPayment->product->download_url);
 
         if (!$response->successful()) {
